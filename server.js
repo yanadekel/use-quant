@@ -1,12 +1,19 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const usersRouter = require('./routes/user.route');
+const path = require('path');
 
 
 
 const app = express();
-const path = require('path');
 app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use('/api/mongoosebank/users', usersRouter); 
+
+
 app.get('/api/getUser', (req,res)=>{
     const user = 'YANA';
     res.json(user);
