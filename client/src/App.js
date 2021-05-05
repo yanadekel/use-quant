@@ -2,17 +2,18 @@ import React from 'react'
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from './components/navBar/Navbar';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
 
   return (<>
     <BrowserRouter>
-      <div className="AppHeader" style={{width:"100%", height: "10vh" }}>
+      <div className="AppHeader" style={{ height: "10vh" }}>
         <Navbar />
       </div>
-      <div className="AppBody"style={{width:"100%", height: "90vh" }}>
+      <div className="AppBody"style={{ height: "90vh" }}>
         <Switch>
-          <Route exact path="/" >
+          <Route exact path="/" exact component={HomePage}>
            
           </Route>
           <Route path="/bankUsers" >

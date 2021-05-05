@@ -1,34 +1,45 @@
 .navbar {
   background: #1c2237;
-  height: 80px;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items:center;
   font-size: 1.2rem;
   position: sticky;
   top: 0;
   z-index: 999;
+  width:100%;
 }
 
 .navbarContainer {
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 100%;
+  width:100%;
 }
 
 .container {
   z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-right: 15px;
+  padding-left: 20px;
+  height: 100%;
+}
+
+.leftSide{
+  display: flex;
+  align-items: center;
+}
+
+.rightSide{
+  display: flex;
+  align-items: center; 
 }
 
 .logo {
   color: #fff;
-  justify-self: start;
+  justify-self: flex-end;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -38,24 +49,24 @@
 
 .navbarIcone {
   margin-right: 0.5rem;
+  align-items: center;
 }
 
 .navMenu {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
   text-align: center;
-  justify-content: end;
 }
 
 .navItem {
   height: 80px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 8px solid transparent;
+  align-items: center;
 }
 
 .navItem:hover {
-  border-bottom: 2px solid #f00946;
+  border-bottom: 3px solid #f00946;
 }
 
 .navLinks {
@@ -76,58 +87,74 @@
 }
 
 @media screen and (max-width: 960px) {
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container {
+    z-index: 1;
+    width: 100vw;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 960px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
   .NavbarItems {
     position: relative;
   }
-
   .navMenu {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: 90vh;
     position: absolute;
     top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    list-style: none;
   }
-
-  .navMenu.active {
+  .navMenu-active {
     background: #1c2237;
     left: 0;
     opacity: 1;
     transition: all 0.6s ease;
     z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 80px;
+    list-style: none;
   }
-
   .navLinks {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
+    text-decoration: none;
   }
-
+  a.navLinks {
+    text-decoration: none;
+  }
   .navLinks:hover {
     color: #f00946;
     transform: scale(1.2);
     transition: all 0.3s ease;
+    text-decoration: none;
   }
-
   .nav-item:hover {
     border: none;
   }
-
   .navItem {
     width: 100%;
   }
-
   .logo {
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(25%, 50%);
+    align-items: flex-start;
   }
-
   .menuIcon {
     display: block;
     position: absolute;
@@ -136,13 +163,13 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
 
+  }
   .fa-times {
     color: #fff;
     font-size: 2rem;
+    align-items: flex-start;
   }
-
   .navBtn {
     display: flex;
     justify-content: center;

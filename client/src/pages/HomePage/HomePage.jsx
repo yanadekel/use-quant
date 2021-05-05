@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../../components/Hero/Hero';
+import {HomeData} from './HomeData';
 
-export default function HomePage() {
+
+
+function HomePage() {
   return (
-    <div>
-      
-    </div>
+    <>
+    <Hero {...HomeData}/>  
+    </>
   )
 }
+
+export default HomePage;
+
