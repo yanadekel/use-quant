@@ -7,10 +7,14 @@ import { ContextProvider } from "./ContextProvider";
 
 const StyledView = styled.body`
 background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-height: 100vh;
-width:100vw;
+height: 91vh;
+width:100%;
 background-repeat : no-repeat;
 background-size : cover; 
+display: flex;
+flex-direction: column;
+align-items:center;
+
 
 `
 const StyledContainer = styled.div`
@@ -22,7 +26,7 @@ const StyledContainer = styled.div`
   background:#fff;
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
-  margin:0 auto;
+  margin:auto;
   overflow: hidden;
 `;
 
