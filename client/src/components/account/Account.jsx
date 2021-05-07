@@ -18,7 +18,7 @@ align-items:center;
 
 `
 const StyledContainer = styled.div`
-  width: 600px;
+  width: 350px;
   min-height: 550px;
   display: flex;
   flex-direction: column;
@@ -167,7 +167,7 @@ function Account(props) {
           {active === "login" && (
             <HeaderContainer>
               <HeaderText>Hello</HeaderText>
-              <HeaderText>Nice To Have You Back</HeaderText>
+              <HeaderText>Wellcome-Back</HeaderText>
               <SmallText>Please Log-In to continue</SmallText>
             </HeaderContainer>
           )}

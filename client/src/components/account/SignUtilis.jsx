@@ -77,7 +77,7 @@ export const Label = styled.label`
 `;
 
 export const OnSubmitButton = styled.button`
-  width: 50%;
+  width: 100%;
   padding: 11px 40%;
   margin-top:5px;
   color: #fff;
