@@ -5,11 +5,12 @@ import {HomeData,HomeData2} from './HomeData';
 
 
 
-function HomePage() {
+function HomePage({signToAccount}) {
+  
   return (
     <>
-    <Hero {...HomeData}/>
-    <Hero2 {...HomeData2}/>  
+    <Hero {...HomeData} signToAccount={signToAccount} />
+    <Hero2 {...HomeData2} signToAccount={signToAccount} />  
     </>
   )
 }

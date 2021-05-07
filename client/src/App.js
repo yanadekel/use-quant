@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from './components/navBar/Navbar';
@@ -8,45 +8,53 @@ import AddProject from './pages/newProject/AddProject';
 
 
 
-function App() {
+const App= () =>{
   const [active, setActive] = useState("");
 
-const signToAccount = (activeMode) =>{
+  const signToAccount =async (activeMode) => {
 
-  if (activeMode=== "login"){
-    setActive("login");
-  }
-  else {
-    setActive("signUp");
+    if (activeMode === "login") {
+      console.log("App.ActiveMode => login")
+      await setActive("login");
+    }
+    if (activeMode=== "signup") {
+      console.log("App.ActiveMode => sign up")
+      await setActive("signUp");
+    }
+    
   }
   
-}
+  useEffect(() => {
+    signToAccount();
+    console.log("App.useEffect " + active)
+  }, [active]);
+
   return (<>
     <BrowserRouter>
       <div className="AppHeader" style={{ height: "" }}>
         <Navbar signToAccount={signToAccount} />
       </div>
-      <div className="AppBody"style={{ height: "" }}>
+      <div className="AppBody" style={{ height: "" }}>
         <Switch>
-          <Route exact path="/" exact component={HomePage}>
-           
+          <Route exact path="/" >
+            <HomePage signToAccount={signToAccount} />
           </Route>
           <Route path="/signToAccount" >
-           <Account appActive={active}/>
+            <Account appActive={active} />
           </Route>
           <Route path="/addProject" >
-            <AddProject/>
+            <AddProject />
           </Route>
           <Route path="/projects" >
           </Route>
           <Route path="/heatTable" >
-         
+
           </Route>
         </Switch>
       </div>
     </BrowserRouter>
   </>
-    
+
   );
 }
 

@@ -5,6 +5,7 @@ import { LoginForm } from "./LoginForm";
 import { SignupForm } from './SignupForm';
 import { ContextProvider } from "./ContextProvider";
 
+
 const StyledView = styled.body`
 background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
 height: 91vh;
@@ -113,7 +114,7 @@ const expandingTransition = {
 
 function Account(props) {
   const [isExpanded, setExpanded] = useState(false);
-  const [active, setActive] = useState("login");
+  const [active, setActive] = useState("");
 
 
 
@@ -123,17 +124,27 @@ function Account(props) {
       setExpanded(false);
     }, expandingTransition.duration * 1000 - 1500);
   };
+  
+  const appUpdate = async () => {
+    console.log("Account.appUpdate: active = " + active + "; props.appActive = " + props.appActive)
+    if (props.appActive === "signup") {
+      console.log("props.appActive" + props.appActive)
+      await setActive("signup");
+    }
+    if (props.appActive === "login") {
+      console.log("props.appActive" + props.appActive)
+      await setActive("login");
+    }
+  }
 
   const toggleToSignup = () => {
-    console.log(active);
     expandingAnimation();
     setTimeout(() => {
       setActive("signup");
-      console.log(active);
     }, 400);
-    
-  };
 
+  };
+  
   const toggleTologin = () => {
     expandingAnimation();
     setTimeout(() => {
@@ -141,51 +152,52 @@ function Account(props) {
     }, 400);
   };
 
-  const appUpdate = () => {
 
-    if (active !== props.appActive) {
-      setActive(props.appActive);
-    }
-  }
+  useEffect(() => {
+    console.log("Account.useEffect => not in use")
+    appUpdate();
+  }, [active]);
+
 
   
-  const contextValue = { toggleToSignup, toggleTologin,appUpdate };
+  const contextValue = { toggleToSignup, toggleTologin};
+  // console.log (contextValue);
+
 
 
   return (
+    
     <StyledView>
-    <ContextProvider.Provider value={contextValue}>
-      
-      <StyledContainer>
-        <TopContainer>
-          <DownDrop
-            initial={false}
-            animate={isExpanded ? "expanded" : "collapsed"}
-            variants={DownDropVariants}
-            transition={expandingTransition}
-          />
-          {active === "login" && (
-            <HeaderContainer>
-              <HeaderText>Hello</HeaderText>
-              <HeaderText>Wellcome-Back</HeaderText>
-              <SmallText>Please Log-In to continue</SmallText>
-            </HeaderContainer>
-          )}
-          {active === "signup" && (
-            <HeaderContainer>
-              <HeaderText>Wellcome </HeaderText>
-              <HeaderText>Join-Here</HeaderText>
-              <SmallText>Please Sign-Up to continue</SmallText>
-            </HeaderContainer>
-          )}
-        </TopContainer>
-        <InnerContainer>
-          {active === "login" && <LoginForm />}
-          {active === "signup" && <SignupForm />}
-        </InnerContainer>
-      </StyledContainer>
-      
-    </ContextProvider.Provider>
+      <ContextProvider.Provider value={contextValue}>
+        <StyledContainer>
+          <TopContainer>
+            <DownDrop
+              initial={false}
+              animate={isExpanded ? "expanded" : "collapsed"}
+              variants={DownDropVariants}
+              transition={expandingTransition}
+            />
+            {active === "login"?  (
+              <HeaderContainer>
+                <HeaderText>Hello</HeaderText>
+                <HeaderText>Wellcome-Back</HeaderText>
+                <SmallText>Please Log-In to continue</SmallText>
+              </HeaderContainer>
+            ):
+             (
+              <HeaderContainer>
+                <HeaderText>Wellcome </HeaderText>
+                <HeaderText>Join-Here</HeaderText>
+                <SmallText>Please Sign-Up to continue</SmallText>
+              </HeaderContainer>
+            )}
+          </TopContainer>
+          <InnerContainer>
+            {active === "login"?(<LoginForm />): (<SignupForm />) }
+          </InnerContainer>
+        </StyledContainer>
+
+      </ContextProvider.Provider>
     </StyledView>
   )
 }

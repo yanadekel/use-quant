@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 import { Button } from '../btn/Button';
 import './hero.css';
 
-function Hero({ lightBg, lightText, lightTextDescription, headLine, description, btnLabel, topLine, img, alt, imgStart }) {
+function Hero({ lightBg, lightText, lightTextDescription, headLine, description, btnLabel, topLine, img, alt, imgStart,signToAccount }) {
+  
+  
+  const activeMode= (mode) =>{
+    console.log("hero 1 :"+ mode);
+    signToAccount(mode);
+  }
+
+ 
   return (
     <>
       <div className={lightBg ? 'heroSection' : 'darkHeroSection'}>
@@ -15,7 +23,10 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
                 <div className="topLine">{topLine}</div>
                 <h1 className={lightText? 'heading': 'hero_dark'}>{headLine}</h1>
                 <p className={lightTextDescription? 'hero_subtitel':'hero_dark'}>{description}</p>
-                <Link to='/signToAccount' style={{marginLeft:"0"}}>
+                <Link to='/signToAccount' value="signup" style={{marginLeft:"0"}} onClick={()=>{
+                  console.log("execute link Sign into account in Hero1");
+                  activeMode("signup")
+                  }}>
                   <Button  buttonSize='btn--wide' buttonColor='blue'>
                     {btnLabel}
                   </Button>
@@ -34,4 +45,4 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
   );
 }
 
-export default Hero
+export default Hero;
