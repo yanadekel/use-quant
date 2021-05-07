@@ -15,7 +15,7 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
                 <div className="topLine">{topLine}</div>
                 <h1 className={lightText? 'heading': 'hero_dark'}>{headLine}</h1>
                 <p className={lightTextDescription? 'hero_subtitel':'hero_dark'}>{description}</p>
-                <Link to='/sign-up' style={{marginLeft:"35%"}}>
+                <Link to='/signToAccount' style={{marginLeft:"0"}}>
                   <Button  buttonSize='btn--wide' buttonColor='blue'>
                     {btnLabel}
                   </Button>

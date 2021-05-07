@@ -6,15 +6,25 @@ import { IconContext } from 'react-icons/lib';
 import { Button } from '../btn/Button';
 import './navbar.css';
 
-function Navbar() {
+const Navbar= ({signToAccount}) =>{
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  
 
   const closeMobileMenue = () => setClick(false);
+
   const handleClick = () => setClick(!click);
+
+ 
+const activeMode= (mode) =>{
+  signToAccount(mode);
+}
+    
+   
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
+
       setButton(false);
     } else {
       setButton(true);
@@ -60,12 +70,12 @@ function Navbar() {
               </li>
               <li className="navBtn">
                 {button ? (
-                  <Link to='/signUp' className="btnLink">
-                    <Button buttonStyle='btn--outline'>SIGN UP</Button>
+                  <Link to='/signToAccount' value="login" onClick={()=>activeMode("login")} className="btnLink">
+                    <Button  buttonStyle='btn--outline'>LogIn</Button>
                   </Link>
                 ) : (
-                  <Link to='/signUp' className="btnLink" onClick={closeMobileMenue}>
-                    <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>SIGN UP</Button>
+                  <Link to='/signToAccount' value={"login"} className="btnLink" onClick={closeMobileMenue}>
+                    <Button  buttonStyle='btn--outline' buttonSize='btn--mobile'>LogIn</Button>
                   </Link>
                 )}
               </li>

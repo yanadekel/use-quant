@@ -1,28 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from './components/navBar/Navbar';
 import HomePage from './pages/HomePage/HomePage';
+import Account from './components/account/Account';
+import AddProject from './pages/newProject/AddProject';
+
+
 
 function App() {
+  const [active, setActive] = useState("");
 
+const signToAccount = (activeMode) =>{
+
+  if (activeMode=== "login"){
+    setActive("login");
+  }
+  else {
+    setActive("signUp");
+  }
+  
+}
   return (<>
     <BrowserRouter>
-      <div className="AppHeader" style={{ height: "10vh" }}>
-        <Navbar />
+      <div className="AppHeader" style={{ height: "" }}>
+        <Navbar signToAccount={signToAccount} />
       </div>
-      <div className="AppBody"style={{ height: "90vh" }}>
+      <div className="AppBody"style={{ height: "" }}>
         <Switch>
           <Route exact path="/" exact component={HomePage}>
            
           </Route>
-          <Route path="/bankUsers" >
-           
+          <Route path="/signToAccount" >
+           <Account appActive={active}/>
           </Route>
-          <Route path="/bankUser" >
-           
+          <Route path="/addProject" >
+            <AddProject/>
           </Route>
-          <Route path="/adduser" >
+          <Route path="/projects" >
+          </Route>
+          <Route path="/heatTable" >
          
           </Route>
         </Switch>

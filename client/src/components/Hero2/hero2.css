@@ -1,46 +1,41 @@
-
-.darkBg {
-  background-color: #1c2237;
-}
-
-.darkHeroSection{
+.heroSection {
   color: #fff;
-  padding-top: 160px;
-  background : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
+  padding-top: 0px;
   height: 100vh;
-  background-repeat : no-repeat;
-  background-size : cover; 
+  width:100%;
+  
 }
 
 
 .hero_rowDirection {
   align-items: center;
   box-sizing: border-box;
-  margin: 0;
+  margin: 20px;
+  height: 100%;
 }
 
 .row {
   display: flex;
-  margin-right: -15px;
-  margin-bottom: -15px;
-  margin-left: -15px;
+  margin-right: 40%;
+  margin-left: 10%;
   flex-wrap: wrap;
   align-content: stretch;
 }
 
-/* .colom {
+.col {
   margin-bottom: 15px;
   padding-right: 15px;
-  padding-left: 10%;
   flex: 1;
   max-width: 50%;
   flex-basis: 50%;
-} */
+}
 
 .hero_contentWrapper {
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+  align-items: center;
+  text-align: center;
 }
 
 .topLine {
@@ -75,28 +70,27 @@
   margin-left: 40px;
   font-size: 18px;
   line-height: 24px;
-  text-align: center;
 }
 
 
-/* .hero_imgWrapper {
+.hero_imgWrapper {
   max-width: 555px;
-} */
+}
 
-/* .hero_img {
-  max-width: 95vw;
-  margin-top: 0;
+.hero_img {
+  max-width: 60vw;
+  margin-top: 50px;
   margin-right: 0;
   margin-left: 10px;
+  margin-bottom: auto;
   padding-right: 0;
-} */
+}
 
-/* img {
+img {
   border: 0;
-  max-width: 100%;
   vertical-align: middle;
   display: inline-block;
-} */
+}
 
 @media screen and (max-width: 991px) {
   .container {
@@ -108,6 +102,7 @@
 @media screen and (max-width: 768px) {
   .hero_contentWrapper {
     padding-bottom: 65px;
+    
   }
 
   .colom {
