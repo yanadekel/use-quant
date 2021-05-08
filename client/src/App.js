@@ -5,6 +5,7 @@ import Navbar from './components/navBar/Navbar';
 import HomePage from './pages/HomePage/HomePage';
 import Account from './components/account/Account';
 import AddProject from './pages/newProject/AddProject';
+import ProjectsTable from './pages/Projects/ProjectsTable';
 
 
 
@@ -46,6 +47,7 @@ const App= () =>{
             <AddProject />
           </Route>
           <Route path="/projects" >
+            <ProjectsTable/>
           </Route>
           <Route path="/heatTable" >
 

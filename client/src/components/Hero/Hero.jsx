@@ -27,7 +27,7 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
                   console.log("execute link Sign into account in Hero1");
                   activeMode("signup")
                   }}>
-                  <Button  buttonSize='btn--wide' buttonColor='blue'>
+                  <Button  buttonSize='btn--wide' buttonStyle='btn--secondry'>
                     {btnLabel}
                   </Button>
                 </Link>

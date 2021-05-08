@@ -21,7 +21,7 @@ function Hero2({ lightBg, lightText, lightTextDescription, headLine, description
               <p className={lightTextDescription ? 'hero_subtitel' : 'hero_dark'}>{description}</p>
             </div>
             <Link to='/signToAccount' style={{ margin: "0% 31%" }} onClick={()=>activeMode("signup")}>
-              <Button buttonSize='btn--wide' buttonColor='red' >
+              <Button buttonSize='btn--wide' buttonStyle='btn--primary' >
                 {btnLabel}
               </Button>
             </Link>

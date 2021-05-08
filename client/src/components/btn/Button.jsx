@@ -1,14 +1,14 @@
 import React from 'react';
 import './button.css';
 
-const STYLES = ['btn--primery', 'btn--outline'];
+const STYLES = ['btn--primery', 'btn--outline','btn--secondry'];
 const SIZES = ['btn--medium', 'btn--large', 'btn--mobile', 'btn--wide'];
 const COLOR = ['primary', 'secondery', 'blue', 'red', 'yellow'];
 
 export const Button = ({ children, type, onClick, buttonStyle, buttonSize, buttonColor }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
   const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0];
-  const checkButtonColor = STYLES.includes(buttonColor) ? buttonColor : COLOR[0];
+  const checkButtonColor = STYLES.includes(buttonColor) ? buttonColor : COLOR;
 
   return (
     <button className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}`}

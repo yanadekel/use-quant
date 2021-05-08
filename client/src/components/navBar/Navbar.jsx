@@ -59,6 +59,11 @@ const activeMode= (mode) =>{
               </Link>
               </li>
               <li className="navItem">
+                <Link to='/addProject' className="navLinks" onClick={closeMobileMenue}>
+                  New Project
+              </Link>
+              </li>
+              <li className="navItem">
                 <Link to='/Projects' className="navLinks" onClick={closeMobileMenue}>
                   Projects
               </Link>
@@ -71,11 +76,22 @@ const activeMode= (mode) =>{
               <li className="navBtn">
                 {button ? (
                   <Link to='/signToAccount' value="login" onClick={()=>activeMode("login")} className="btnLink">
-                    <Button  buttonStyle='btn--outline'>LogIn</Button>
+                    <Button buttonSize='btn--wide' buttonStyle='btn--secondry'>LogIn</Button>
                   </Link>
                 ) : (
                   <Link to='/signToAccount' value={"login"} className="btnLink" onClick={closeMobileMenue}>
-                    <Button  buttonStyle='btn--outline' buttonSize='btn--mobile'>LogIn</Button>
+                    <Button  buttonStyle='btn--secondry' buttonSize='btn--mobile'>LogIn</Button>
+                  </Link>
+                )}
+              </li>
+              <li className="navBtn">
+                {button ? (
+                  <Link to='/' value="logout" className="btnLink">
+                    <Button buttonSize='btn--wide' buttonStyle='btn--outline'>LogOut</Button>
+                  </Link>
+                ) : (
+                  <Link to='/' value={"logout"} className="btnLink" onClick={closeMobileMenue}>
+                    <Button  buttonStyle='btn--outline' buttonSize='btn--mobile'>LogOut</Button>
                   </Link>
                 )}
               </li>

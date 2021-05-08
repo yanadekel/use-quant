@@ -7,12 +7,14 @@ import {
   MutedLink,
   BoldLink,
 } from "../../components/account/SignUtilis";
+import "./newPro.css"
 
 import { Margin } from "../../components/margin/Margin";
 
 const CreateForm = (props) => {
   return (
     <>
+    
       <StyledContainer>
         <Margin margin="20px" direction="virtical" />
         <FormContainer>
@@ -24,9 +26,9 @@ const CreateForm = (props) => {
           <Input type="file" id="myFile" name="filename" />
         </FormContainer>
         <Margin margin={10} direction="virtical" />
-        <OnSubmitButton type="submit">Confourm</OnSubmitButton>
-        <Margin margin="16px" direction="virtical" />
-        {/* <MutedLink href="#">Don't Have An Account?<BoldLink href="#"> SignUp</BoldLink></MutedLink> */}
+        <OnSubmitButton id= "costumeBtnStyle" type="submit">Confirm</OnSubmitButton>
+        <Margin margin="5px" direction="virtical" />
+        <MutedLink href="#">Changed your mind? Please SignOut<BoldLink href="/"> SignOut</BoldLink></MutedLink>
 
       </StyledContainer>
     </>

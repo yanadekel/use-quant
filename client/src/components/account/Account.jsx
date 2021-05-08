@@ -15,8 +15,6 @@ background-size : cover;
 display: flex;
 flex-direction: column;
 align-items:center;
-
-
 `
 const StyledContainer = styled.div`
   width: 350px;

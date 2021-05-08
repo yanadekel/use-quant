@@ -1,0 +1,14 @@
+#costumeBtnStyle {
+  width: 100%;
+  padding: 11px 40%;
+  margin-top:5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px 100px 100px 100px;
+  cursor: pointer;
+  transition: all, 240ms ease-in-out;
+  background:transparent;
+  border: solid 1px #fff;
+}
+

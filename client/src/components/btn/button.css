@@ -23,11 +23,19 @@
 
 .btn--outline{
   background-color: transparent;
-  color: var (var(--primery));
-  border: solid 1px var(--primery);
+  color:#22B2DA;
+  border: solid 1px #22B2DA;
   padding: 8px 20px;
   transition: all 0.4s ease-out;
   
+}
+
+.btn--secondry {
+  background-color: var(--secondery);
+  color: #fff;
+  /* border: solid 1px var(--primery); */
+  padding: 8px 20px;
+  transition: all 0.4s ease-out;
 }
 
 .btn--mobile{

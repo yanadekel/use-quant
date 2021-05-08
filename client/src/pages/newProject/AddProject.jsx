@@ -3,13 +3,29 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import CreateForm from './CreateForm';
 
+const StyledView = styled.body`
+background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
+height: 91vh;
+width:100%;
+background-repeat : no-repeat;
+background-size : cover; 
+display: flex;
+flex-direction: column;
+align-items:center;
+`
+
 const StyledContainer = styled.div`
   width: 900px;
   min-height: 550px;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background-color: #fff;
+  background: rgb(40, 78, 103);
+  background: linear-gradient(
+    58deg,
+    rgba(40, 78, 103, 1) 20%,
+    rgba(18, 45, 62, 1) 100%
+  );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   margin:5% auto;
@@ -106,27 +122,28 @@ const AddProject = () => {
     }, expandingTransition.duration * 1000 - 1500);
   };
   return (<>
+    <StyledView>
+      <StyledContainer>
+        <TopContainer>
+          <DownDrop
+            initial={false}
+            animate={isExpanded ? "expanded" : "collapsed"}
+            variants={DownDropVariants}
+            transition={expandingTransition}
+          />
 
-    <StyledContainer>
-      <TopContainer>
-        <DownDrop
-          initial={false}
-          animate={isExpanded ? "expanded" : "collapsed"}
-          variants={DownDropVariants}
-          transition={expandingTransition}
-        />
+          <HeaderContainer>
+            {/* <HeaderText>Hello</HeaderText> */}
+            <HeaderText>Add New Project</HeaderText>
+            <SmallText>Must Have Project Name</SmallText>
+          </HeaderContainer>
 
-        <HeaderContainer>
-          {/* <HeaderText>Hello</HeaderText> */}
-          <HeaderText>Add New Project</HeaderText>
-          <SmallText>Must Have Project Id</SmallText>
-        </HeaderContainer>
-
-      </TopContainer>
-      <InnerContainer>
-        <CreateForm />
-      </InnerContainer>
-    </StyledContainer>
+        </TopContainer>
+        <InnerContainer>
+          <CreateForm />
+        </InnerContainer>
+      </StyledContainer>
+    </StyledView>
   </>
   )
 }
