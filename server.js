@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const usersRouter = require('./routes/user.route');
+const projectsRouter = require ('./routes/project.route')
 const path = require('path');
 
 
@@ -11,7 +12,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use('/api/mongoosebank/users', usersRouter); 
+app.use( usersRouter); 
+app.use( projectsRouter); 
 
 
 app.get('/api/getUser', (req,res)=>{
@@ -20,7 +22,7 @@ app.get('/api/getUser', (req,res)=>{
 })
 
 const port = 8000;
-const uri = "mongodb+srv://YANA:72877287@use-quant.eurzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://YANA:72877287@use-quant.eurzl.mongodb.net/UseQuantDB?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
     useNewUrlParser: true,

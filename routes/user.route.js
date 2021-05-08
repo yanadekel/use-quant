@@ -1,9 +1,10 @@
 const express = require('express');
+const userRouter = express.Router();
 const auth = require ('../middleware/auth')
-const router = express.Router();
+const adminAuth = require('../middleware/adminAuth');
 const usersController = require('../controllers/users.controller');
 
-router.post('/', (req, res) => {
+userRouter.post('/', (req, res) => {
   usersController.addUser(req, res);
 
 }).post('/login', (req, res) => {
@@ -12,8 +13,10 @@ router.post('/', (req, res) => {
   usersController.userLogout(req, res);
 }).post('/logoutAll', auth, (req, res) => {
   usersController.logoutAll(req, res);
-})
+}).put('/', auth, adminAuth,(req, res) => {
+  userController.updateUser(req, res);
+});
 
 
 
-module.exports = router;
+module.exports = userRouter;
