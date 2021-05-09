@@ -18,7 +18,7 @@ app.use('/api/useQuant/projects', projectsRouter);
 
 app.get('/', (req,res)=>{
    
-    res.json({success : 'useQuant API'});
+    // res.json({success : 'useQuant API'});
 })
 
 const port = 8000;
