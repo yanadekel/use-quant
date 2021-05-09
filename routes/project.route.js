@@ -1,12 +1,12 @@
 const express = require('express');
-const projectRouter = express.Router();
+const router = express.Router();
 // const auth = require('../middleware/auth')
 // const adminAuth = require('../middleware/adminAuth');
 const projectsController = require('../controllers/projects.controller');
 
 
 
-projectRouter.post('/', (req, res) => {
+router.post('/', (req, res) => {
   projectsController.addProject(req, res);
 })
   .get('/', (req, res) => {
@@ -31,4 +31,4 @@ projectRouter.post('/', (req, res) => {
     projectsController.deleteProject(req, res);
   })
 
-  module.exports = projectRouter;
+  module.exports = router;
