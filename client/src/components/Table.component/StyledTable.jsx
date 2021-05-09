@@ -26,7 +26,12 @@ margin:0 auto;
 `;
 
 export const TFoot = styled.tfoot`
-  // custom css goes here
+display: block;
+justify-content: center;
+align-items:center;
+width:100%;
+
+
 `;
 
 export const TBody = styled.tbody`

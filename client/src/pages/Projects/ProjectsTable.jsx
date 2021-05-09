@@ -19,12 +19,12 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background-color:rgb(24,57,76);
-  background: linear-gradient(
-    30deg,
-    rgba(24, 57, 76, 1) 0%,
-    rgba(77, 128,160, 1) 35%
-  );
+  background-color:rgb(77,128,160);
+  // background: linear-gradient(
+  //   30deg,
+  //   rgba(24, 57, 76, 1) 0%,
+  //   rgba(77, 128,160, 1) 35%
+  // );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   margin:auto;
