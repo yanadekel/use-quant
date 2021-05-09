@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const validator = require("validator");
 
 
-const ProjectSchema = new mongoose.Schema({
+const ProjectSchema =  mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    required: false,
     trim: true,
     ref: 'User',
   },
@@ -13,6 +13,11 @@ const ProjectSchema = new mongoose.Schema({
   costumerName: {
     type: String,
     trim: true,
+    require: true,
+    lowercase: true,
+    minLength: 4,
+    ltrim: true,
+    rtrim: true,
   },
 
   projectName: {
@@ -22,7 +27,7 @@ const ProjectSchema = new mongoose.Schema({
     require: true,
     lowercase: true,
     minLength: 4,
-
+    unique: true,
   },
 
   tableFile: {

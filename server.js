@@ -12,13 +12,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use( usersRouter); 
-app.use( projectsRouter); 
+app.use('/api/useQuant/users', usersRouter); 
+app.use('/api/useQuant/projects', projectsRouter); 
 
 
-app.get('/api/getUser', (req,res)=>{
-    const user = 'YANA';
-    res.json(user);
+app.get('/', (req,res)=>{
+   
+    res.json({success : 'useQuant API'});
 })
 
 const port = 8000;

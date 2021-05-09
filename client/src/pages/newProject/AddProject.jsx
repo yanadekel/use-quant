@@ -20,11 +20,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background: rgb(40, 78, 103);
-  background: linear-gradient(
-    58deg,
-    rgba(40, 78, 103, 1) 20%,
-    rgba(18, 45, 62, 1) 100%
+  background: url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
+  // background: linear-gradient(
+  //   58deg,
+  //   rgba(40, 78, 103, 1) 20%,
+  //   rgba(18, 45, 62, 1) 100%
   );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
@@ -78,7 +78,7 @@ const HeaderText = styled.h2`
 const SmallText = styled.h3`
   color: #fff;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 15px;
   z-index: 10;
   margin: auto;
   margin-top: 7px;
@@ -121,6 +121,7 @@ const AddProject = () => {
       setExpanded(false);
     }, expandingTransition.duration * 1000 - 1500);
   };
+
   return (<>
     <StyledView>
       <StyledContainer>
@@ -133,7 +134,6 @@ const AddProject = () => {
           />
 
           <HeaderContainer>
-            {/* <HeaderText>Hello</HeaderText> */}
             <HeaderText>Add New Project</HeaderText>
             <SmallText>Must Have Project Name</SmallText>
           </HeaderContainer>

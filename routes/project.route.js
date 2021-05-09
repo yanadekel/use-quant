@@ -2,33 +2,33 @@ const express = require('express');
 const projectRouter = express.Router();
 // const auth = require('../middleware/auth')
 // const adminAuth = require('../middleware/adminAuth');
-const projectsController = require('../controllers/users.controller');
+const projectsController = require('../controllers/projects.controller');
 
 
 
-projectRouter.post('/projects', (req, res) => {
+projectRouter.post('/', (req, res) => {
   projectsController.addProject(req, res);
 })
-  .get('/projects', (req, res) => {
+  .get('/', (req, res) => {
     projectsController.getAllProjects(req, res);
 
-  }).get('/projects/active', (req, res) => {
+  }).get('/active', (req, res) => {
     projectsController.getAllActive(req, res);
 
-  }).get('/projects/project/:id', (req, res) => {
+  }).get('/project/:id', (req, res) => {
     projectsController.getProject(req, res);
 
-  }).get('/projects/costumer/:id', async (req, res) => {
+  }).get('/costumer/:id', async (req, res) => {
     res.send(req.user);
     //login to costumer project
   })
 
-  .put('/projects/update/:Id', (req, res) => {
+  .put('/update/:Id', (req, res) => {
     projectsController.updateProject(req, res);
   })
 
-  .delete('/projects/:id',  (req, res) => {
-    projectsControlle.deleteProject(req, res);
+  .delete('/:id',  (req, res) => {
+    projectsController.deleteProject(req, res);
   })
 
   module.exports = projectRouter;

@@ -12,6 +12,8 @@ import ProjectsTable from './pages/Projects/ProjectsTable';
 const App= () =>{
   const [active, setActive] = useState("");
 
+
+
   const signToAccount =async (activeMode) => {
 
     if (activeMode === "login") {
@@ -27,7 +29,7 @@ const App= () =>{
   
   useEffect(() => {
     signToAccount();
-    console.log("App.useEffect " + active)
+
   }, [active]);
 
   return (<>

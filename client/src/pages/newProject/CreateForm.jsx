@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from "axios";
 import {
   StyledContainer,
   FormContainer,
@@ -8,31 +9,74 @@ import {
   BoldLink,
 } from "../../components/account/SignUtilis";
 import "./newPro.css"
-
 import { Margin } from "../../components/margin/Margin";
 
+
 const CreateForm = (props) => {
-  return (
-    <>
-    
-      <StyledContainer>
-        <Margin margin="20px" direction="virtical" />
-        <FormContainer>
-          <BoldLink href="#"> Project Name</BoldLink>
-          <Input type="text" placeholder="Add Project Name" />
-          <BoldLink href="#"> Costumer Name</BoldLink>
-          <Input type="text" placeholder="Costumer Name" />
-          <BoldLink href="#"> Uploud File</BoldLink>
-          <Input type="file" id="myFile" name="filename" />
-        </FormContainer>
-        <Margin margin={10} direction="virtical" />
-        <OnSubmitButton id= "costumeBtnStyle" type="submit">Confirm</OnSubmitButton>
-        <Margin margin="5px" direction="virtical" />
-        <MutedLink href="#">Changed your mind? Please SignOut<BoldLink href="/"> SignOut</BoldLink></MutedLink>
+  const base = "/api/useQuant/projects";
+  const [projectName, setProjectName] = useState('');
+  const [costumerName, setCostumerName] = useState('');
+  const [tableFile, setTableFile] = useState('');
 
-      </StyledContainer>
-    </>
-  )
-}
 
-export default CreateForm;
+  const fetchPostData = async () => {
+    console.log(projectName)
+    console.log(costumerName)
+    console.log(tableFile)
+
+        try {
+          const response = await axios.post(`${base}`, {
+            projectName,
+            costumerName,
+            tableFile,
+          });
+          console.log(response.data)
+          prompt("Project Created")
+
+        } catch (error) {
+          console.log(error);
+        }
+      }
+  
+
+  
+  const formHandler = (e) => {
+      e.preventDefault();
+
+    }
+
+    const reset = () => {
+      setProjectName('');
+      setCostumerName('');
+      setTableFile('');
+    }
+
+    const clickHandler = () => {
+      fetchPostData();
+      reset();
+    }
+
+    return (
+      <>
+
+        <StyledContainer>
+          <Margin margin="20px" direction="virtical" />
+          <FormContainer onSubmit={formHandler}>
+            <BoldLink href="#"> Project Name</BoldLink>
+            <Input type="text" onChange={(e) => setProjectName(e.target.value)} placeholder="Add Project Name" />
+            <Margin margin="20px" direction="virtical" />
+            <BoldLink href="#"> Costumer Name</BoldLink>
+            <Input type="text" onChange={(e) => setCostumerName(e.target.value)} placeholder="Costumer Name" />
+            <Margin margin="20px" direction="virtical" />
+            <BoldLink href="#"> Uploud File</BoldLink>
+            <Input type="file" onChange={(e) => setTableFile(e.target.value)} id="myFile" name="filename" />
+            <Margin margin="20px" direction="virtical" />
+          </FormContainer>
+          <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={clickHandler}>CREATE</OnSubmitButton>
+          <MutedLink href="#">GO  TO PROJECTS? <BoldLink href="/projects"> Projects</BoldLink></MutedLink>
+        </StyledContainer>
+      </>
+    )
+  }
+
+  export default CreateForm;
