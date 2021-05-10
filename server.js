@@ -16,10 +16,10 @@ app.use('/api/useQuant/users', usersRouter);
 app.use('/api/useQuant/projects', projectsRouter); 
 
 
-app.get('/', (req,res)=>{
+// app.get('/', (req,res)=>{
    
-    res.json({success : 'useQuant API'});
-})
+//     res.json({success : 'useQuant API'});
+// })
 
 const port = 8000;
 const uri = "mongodb+srv://YANA:72877287@use-quant.eurzl.mongodb.net/UseQuantDB?retryWrites=true&w=majority";
