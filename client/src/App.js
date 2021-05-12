@@ -6,27 +6,28 @@ import HomePage from './pages/HomePage/HomePage';
 import Account from './components/account/Account';
 import AddProject from './pages/newProject/AddProject';
 import ProjectsTable from './pages/Projects/ProjectsTable';
+import FileUpload from './components/fileUpload/FileUpload';
 
 
 
-const App= () =>{
+const App = () => {
   const [active, setActive] = useState("");
 
 
 
-  const signToAccount =async (activeMode) => {
+  const signToAccount = async (activeMode) => {
 
     if (activeMode === "login") {
       console.log("App.ActiveMode => login")
       await setActive("login");
     }
-    if (activeMode=== "signup") {
+    if (activeMode === "signup") {
       console.log("App.ActiveMode => sign up")
       await setActive("signUp");
     }
-    
+
   }
-  
+
   useEffect(() => {
     signToAccount();
 
@@ -34,10 +35,10 @@ const App= () =>{
 
   return (<>
     <BrowserRouter>
-      <div className="AppHeader" style={{ height: "" }}>
+      {/* <div className="AppHeader" style={{ height: "" }}> */}
         <Navbar signToAccount={signToAccount} />
-      </div>
-      <div className="AppBody" style={{ height: "" }}>
+      {/* </div> */}
+      {/* <div className="AppBody" style={{ height: "" }}> */}
         <Switch>
           <Route exact path="/" >
             <HomePage signToAccount={signToAccount} />
@@ -49,13 +50,16 @@ const App= () =>{
             <AddProject />
           </Route>
           <Route path="/projects" >
-            <ProjectsTable/>
+            <ProjectsTable />
           </Route>
           <Route path="/heatTable" >
 
           </Route>
+          <Route path="/upload" >
+            <FileUpload />
+          </Route>
         </Switch>
-      </div>
+      {/* </div> */}
     </BrowserRouter>
   </>
 

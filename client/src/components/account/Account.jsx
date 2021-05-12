@@ -49,7 +49,7 @@ const DownDrop = styled(motion.div)`
   transform: rotate(185deg);
   top: -290px;
   left: -70px;
-  background: rgb(40, 78, 103);
+  background-color:(18, 45, 62, 1);
   background: linear-gradient(
     58deg,
     rgba(40, 78, 103, 1) 20%,

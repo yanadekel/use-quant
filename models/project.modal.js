@@ -30,8 +30,9 @@ const ProjectSchema =  mongoose.Schema({
     unique: true,
   },
 
-  tableFile: {
-    type:Buffer,
+  fileName: {
+   type:String,
+   
   },
 
   isActive: {

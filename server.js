@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const usersRouter = require('./routes/user.route');
 const projectsRouter = require ('./routes/project.route')
 const path = require('path');
+const fileRouter = require('./routes/file.route');
+
 
 
 
@@ -14,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/api/useQuant/users', usersRouter); 
 app.use('/api/useQuant/projects', projectsRouter); 
+app.use('/api/useQuant/fils', fileRouter); 
 
 
 // app.get('/', (req,res)=>{

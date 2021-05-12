@@ -10,25 +10,25 @@ import {
 } from "../../components/account/SignUtilis";
 import "./newPro.css"
 import { Margin } from "../../components/margin/Margin";
+import { Button } from '../../components/btn/Button';
 
 
 const CreateForm = (props) => {
-  const base = "/api/useQuant/projects";
+  const base = "/api/useQuant";
   const [projectName, setProjectName] = useState('');
   const [costumerName, setCostumerName] = useState('');
-  const [tableFile, setTableFile] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
+
 
 
   const fetchPostData = async () => {
-    console.log(projectName)
-    console.log(costumerName)
-    console.log(tableFile)
+   
 
         try {
-          const response = await axios.post(`${base}`, {
+          const response = await axios.post(`${base}/projects`, {
             projectName,
             costumerName,
-            tableFile,
+           
           });
           console.log(response.data)
           prompt("Project Created")
@@ -45,15 +45,33 @@ const CreateForm = (props) => {
 
     }
 
+    const onChangeHandler = (event) => {
+      setSelectedFile(event.target.files[0])
+  
+    }
     const reset = () => {
+     setCostumerName('');
       setProjectName('');
-      setCostumerName('');
-      setTableFile('');
     }
 
     const clickHandler = () => {
+      console.log(selectedFile);
+      if(projectName!==selectedFile ){
+        setProjectName(selectedFile.name)
+      }
+      
       fetchPostData();
       reset();
+    }
+
+    const onClickHandler = () => {
+      const data = new FormData()
+      data.append('file', selectedFile);
+      axios.post(`${base}/fils`, data, {
+  
+      }).then(res => {
+        console.log()
+      })
     }
 
     return (
@@ -69,10 +87,10 @@ const CreateForm = (props) => {
             <Input type="text" onChange={(e) => setCostumerName(e.target.value)} placeholder="Costumer Name" />
             <Margin margin="20px" direction="virtical" />
             <BoldLink href="#"> Uploud File</BoldLink>
-            <Input type="file" onChange={(e) => setTableFile(e.target.value)} id="myFile" name="filename" />
-            <Margin margin="20px" direction="virtical" />
+            <Input type="file" name="file" onChange={onChangeHandler} />
+            <Button buttonStyle='btn--outline2' onClick={onClickHandler}>Upload File</Button>
           </FormContainer>
-          <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={clickHandler}>CREATE</OnSubmitButton>
+          <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={clickHandler}>CREATE PROJECT</OnSubmitButton>
           <MutedLink href="#">GO  TO PROJECTS? <BoldLink href="/projects"> Projects</BoldLink></MutedLink>
         </StyledContainer>
       </>

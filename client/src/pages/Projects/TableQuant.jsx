@@ -33,12 +33,12 @@ const OnSubmitButton = styled.button`
   align-items:center;
   width: 100%;
   padding: 11px;
-  margin-top:auto;
+  margin:auto;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
   border: none;
-  border-radius: 5%;
+  border-radius:none;
   cursor: pointer;
   transition: all, 240ms ease-in-out;
   background: rgb(40, 78, 103);
@@ -98,7 +98,7 @@ function TableQuant({ data, headings }) {
         <tr key={index}>
           <td>{project.projectName}</td>
           <td>{project.costumerName}</td>
-          <td>{project.file}</td>
+          <td>{project.fileName}</td>
           <td>{project.date}</td>
           {/* <td className='opration'>
             <Link to="/heatmap"><button onClick={()=>getHeatMap(project.heatMap)}>HeatMap Table</button></Link>
@@ -131,6 +131,7 @@ function TableQuant({ data, headings }) {
       </Table.Foot>
       {/* <Table.Foot><button onClick={getActive}> active projects</button></Table.Foot> */}
     </Table>
+    <Margin margin="10px" direction="virtical" />
 
   </>
   )

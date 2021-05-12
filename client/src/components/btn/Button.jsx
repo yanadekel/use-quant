@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 
-const STYLES = ['btn--primery', 'btn--outline','btn--secondry'];
+const STYLES = ['btn--primery', 'btn--outline','btn--secondry','btn--outline2'];
 const SIZES = ['btn--medium', 'btn--large', 'btn--mobile', 'btn--wide'];
 const COLOR = ['primary', 'secondery', 'blue', 'red', 'yellow'];
 

@@ -1,16 +1,17 @@
 const Project = require('../models/project.modal');
-
+const CSVToJSON = require('csvtojson');
 
 
 
 
 const createProject = async (req, res) => {
-  const {costumerName , projectName,tableFile, isActive, date } = req.body;
+  console.log('projects.controller:createProject')
+  const { costumerName, projectName, fileName, isActive, date  } = req.body;
 
   const project = new Project({
     projectName,
     costumerName,
-    tableFile,
+    fileName:projectName,
     isActive,
     date
   });
@@ -18,7 +19,7 @@ const createProject = async (req, res) => {
   try {
     await project.save();
     // const token = await project.generateAuthToken();
-    res.status(201).send({project});
+    res.status(201).send({ project });
 
   } catch (e) {
     res.status(400).send(e);
@@ -48,7 +49,7 @@ const getActive = async (req, res) => {
 }
 
 const getProjectById = async (req, res) => {
-  const  id  = req.params.id;
+  const id = req.params.id;
   console.log(id);
   try {
     const project = await Project.findById(id);
@@ -65,7 +66,7 @@ const getProjectById = async (req, res) => {
 
 const updateProject = async (req, res) => {
   const updates = Object.keys(req.body);
-  const alloweUpdates = ["isActive","projectName","costumerName"];
+  const alloweUpdates = ["isActive", "projectName", "costumerName"];
   const isValidOpertion = updates.every((update) => alloweUpdates.includes(update));
 
   if (!isValidOpertion) {
@@ -74,35 +75,42 @@ const updateProject = async (req, res) => {
 
   try {
 
-    const project = await Project.findOneAndUpdate(req.params.id, req.body, {new:true,runValidators:true });
+    const project = await Project.findOneAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
 
     if (!project) {
       return res.status(404).send("not such a project")
     }
 
     updates.forEach((update) => (project[update] = req.body[update]));
-		await project.save();
-    res.status(200).json({project:project})
+    await project.save();
+    res.status(200).json({ project: project })
   } catch (error) {
-    res.status(400).send({error:'invalid'});
+    res.status(400).send({ error: 'invalid' });
   }
- 
+
 }
 
 
 const deleteProject = async (req, res) => {
   const id = req.params.id;
   try {
-      const project = await Project.findByIdAndDelete(id);
-      if (!project) {
-          return res.status(404).send();
-      }
+    const project = await Project.findByIdAndDelete(id);
+    if (!project) {
+      return res.status(404).send();
+    }
 
-      res.send(project)
+    res.send(project)
   } catch (err) {
-      res.status(500).send(err);
+    res.status(500).send(err);
   }
 }
+
+
+
+// const fileUpload= async (req, res)=>{
+// res.send()
+// }
+
 
 module.exports = {
   addProject: createProject,
@@ -110,5 +118,6 @@ module.exports = {
   getAllActive: getActive,
   getProject: getProjectById,
   updateProject: updateProject,
-  deleteProject
+  deleteProject,
+  // fileUpload
 }

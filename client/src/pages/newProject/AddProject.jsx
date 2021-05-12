@@ -5,7 +5,7 @@ import CreateForm from './CreateForm';
 
 const StyledView = styled.body`
 background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-height: 91vh;
+height: 90vh;
 width:100%;
 background-repeat : no-repeat;
 background-size : cover; 
@@ -15,26 +15,26 @@ align-items:center;
 `
 
 const StyledContainer = styled.div`
-  width: 900px;
-  min-height: 550px;
+  width: 50%;
+  min-height:50% ;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background: url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-  // background: linear-gradient(
-  //   58deg,
-  //   rgba(40, 78, 103, 1) 20%,
-  //   rgba(18, 45, 62, 1) 100%
+  background-color:(18, 45, 62, 1);
+  background: linear-gradient(
+    58deg,
+    rgba(40, 78, 103, 1) 20%,
+    rgba(18, 45, 62, 1) 100%
   );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
-  margin:5% auto;
+  margin:2% 0;
   overflow: hidden;
 `;
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height:300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -43,19 +43,19 @@ const TopContainer = styled.div`
 `;
 
 const DownDrop = styled(motion.div)`
-  width: 160%;
-  height: 550px;
+  width: 100%;
+  height: 100px;
   position: absolute;
   display: flex;
   flex-direction: column;
   border-radius: 50%;
-  transform: rotate(185deg);
-  top: -290px;
-  left: -70px;
-  background: rgb(40, 78, 103);
+  transform: rotate(30deg);
+  top: -400px;
+  left: -100px;
+  background: rgb(77,128,160);
   background: linear-gradient(
     58deg,
-    rgba(40, 78, 103, 1) 20%,
+    rgba(77, 128, 160, 1) 20%,
     rgba(18, 45, 62, 1) 100%
   );
 `;
@@ -68,7 +68,7 @@ const HeaderContainer = styled.div`
 
 const HeaderText = styled.h2`
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.24;
   color: #fff;
   z-index: 10;
@@ -89,6 +89,7 @@ const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 32px;
+  height:100%;
 `;
 
 const DownDropVariants = {
@@ -96,13 +97,13 @@ const DownDropVariants = {
     width: "233%",
     height: "1050px",
     borderRadius: "20%",
-    transform: "rotate(185deg)",
+    transform: "rotate(30deg)",
   },
   collapsed: {
-    width: "160%",
+    width: "130%",
     height: "550px",
     borderRadius: "50%",
-    transform: "rotate(185deg)",
+    transform: "rotate(30deg)",
   },
 };
 

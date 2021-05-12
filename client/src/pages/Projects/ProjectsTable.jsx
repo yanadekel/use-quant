@@ -5,7 +5,7 @@ import Table from "./TableQuant";
 
 const StyledView = styled.body`
 background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-height: 91vh;
+height: 90vh;
 width:100%;
 background-repeat : no-repeat;
 background-size : cover; 
@@ -14,8 +14,8 @@ flex-direction: column;
 align-items:center;
 `
 const StyledContainer = styled.div`
-  width: 800px;
-  min-height: 550px;
+  width: 50%;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
@@ -27,7 +27,7 @@ const StyledContainer = styled.div`
   // );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
-  margin:auto;
+  margin:5px auto;
   overflow: hidden;
 `;
 

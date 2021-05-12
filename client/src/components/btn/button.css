@@ -21,6 +21,7 @@
   border: solid 1px var(--primery);
 }
 
+
 .btn--outline{
   background-color: transparent;
   color:#22B2DA;
@@ -36,6 +37,17 @@
   /* border: solid 1px var(--primery); */
   padding: 8px 20px;
   transition: all 0.4s ease-out;
+}
+
+
+.btn--outline2 {
+  background-color: transparent;
+  color:#f23557;
+  border: solid 1px rgb(40, 78, 103);
+  padding: 8px 20px;
+  transition: all 0.4s ease-out; 
+  border-radius: none;
+  font-size: 13px;
 }
 
 .btn--mobile{
