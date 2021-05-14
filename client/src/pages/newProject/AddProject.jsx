@@ -15,8 +15,8 @@ align-items:center;
 `
 
 const StyledContainer = styled.div`
-  width: 50%;
-  min-height:50% ;
+  width: 35%;
+  min-height:70% ;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
@@ -50,11 +50,11 @@ const DownDrop = styled(motion.div)`
   flex-direction: column;
   border-radius: 50%;
   transform: rotate(30deg);
-  top: -400px;
-  left: -100px;
+  top: -341px;
+  left: -109px;
   background: rgb(77,128,160);
   background: linear-gradient(
-    58deg,
+    281deg,
     rgba(77, 128, 160, 1) 20%,
     rgba(18, 45, 62, 1) 100%
   );

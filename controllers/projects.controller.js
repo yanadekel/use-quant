@@ -1,11 +1,11 @@
 const Project = require('../models/project.modal');
-const CSVToJSON = require('csvtojson');
+
 
 
 
 
 const createProject = async (req, res) => {
-  console.log('projects.controller:createProject')
+
   const { costumerName, projectName, fileName, isActive, date  } = req.body;
 
   const project = new Project({
@@ -22,6 +22,7 @@ const createProject = async (req, res) => {
     res.status(201).send({ project });
 
   } catch (e) {
+    console.log('that error'+e);
     res.status(400).send(e);
   }
 }
