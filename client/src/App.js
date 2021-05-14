@@ -40,7 +40,7 @@ const App = () => {
       {/* </div> */}
       {/* <div className="AppBody" style={{ height: "" }}> */}
         <Switch>
-          <Route  path="/" >
+          <Route exact path="/" >
             <HomePage signToAccount={signToAccount} />
           </Route>
           <Route path="/signToAccount" >
