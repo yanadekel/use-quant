@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const File = require('../models/file.model');
 var csv = require('fast-csv');
 const Mongoose = require('mongoose');
 const Matrix = require('../models/Matrix.model');
