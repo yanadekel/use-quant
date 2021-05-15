@@ -116,12 +116,12 @@ const expandingTransition = {
 const AddProject = () => {
   const [isExpanded, setExpanded] = useState(false);
 
-  const expandingAnimation = () => {
-    setExpanded(true);
-    setTimeout(() => {
-      setExpanded(false);
-    }, expandingTransition.duration * 1000 - 1500);
-  };
+  // const expandingAnimation = () => {
+  //   setExpanded(true);
+  //   setTimeout(() => {
+  //     setExpanded(false);
+  //   }, expandingTransition.duration * 1000 - 1500);
+  // };
 
   return (<>
     <StyledView>
@@ -136,7 +136,7 @@ const AddProject = () => {
 
           <HeaderContainer>
             <HeaderText>Add New Project</HeaderText>
-            <SmallText>Must Have Project Name</SmallText>
+            <SmallText>Must Add File</SmallText>
           </HeaderContainer>
 
         </TopContainer>

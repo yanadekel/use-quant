@@ -15,7 +15,6 @@ const ProjectSchema =  mongoose.Schema({
     trim: true,
     require: true,
     lowercase: true,
-    minLength: 2,
     ltrim: true,
     rtrim: true,
   },
@@ -26,7 +25,6 @@ const ProjectSchema =  mongoose.Schema({
     rtrim: true,
     require: true,
     lowercase: true,
-    minLength: 4,
     // unique: true,
   },
 
