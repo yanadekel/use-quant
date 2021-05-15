@@ -11,7 +11,7 @@ const createProject = async (req, res) => {
   const project = new Project({
     projectName,
     costumerName,
-    fileName:projectName,
+    fileName,
     isActive,
     date
   });
@@ -108,9 +108,7 @@ const deleteProject = async (req, res) => {
 
 
 
-// const fileUpload= async (req, res)=>{
-// res.send()
-// }
+
 
 
 module.exports = {
@@ -120,5 +118,4 @@ module.exports = {
   getProject: getProjectById,
   updateProject: updateProject,
   deleteProject,
-  // fileUpload
 }

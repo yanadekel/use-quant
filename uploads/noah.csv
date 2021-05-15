@@ -1,0 +1,381 @@
+﻿Observations,Solutions
+acceleration timeout,Annotation
+Alert temperature limiter,Reference using bypass
+CL WRX Control has stopped working,Check table
+Focus out of range error,Calibrate optics
+Grid zero error,Calibrate optics
+HV error,Calibrate optics
+M2_89_02,Adjust powder nipples
+No CAN connection error,Adjust build chamber
+Powder chamber target position not reachable,Align rake
+Regulation failed,Align laser camera
+SPS not connected,Apply for license key
+Heating failing,Beam verification plate.
+JAT_03_5442,Build fail
+Lasercurve calibration error,Build simulation remotely
+Error M2_80_11,Build table top replacement
+Error M2_84_11,Build verification plate
+Error M2_84_15,Build SAT
+Error M2_84_5,Calibrate optics
+M2_89_0,calibration
+Error M2_89_2,Calibrate beam
+Error MLAB_G04,Calibrate beam
+Build parts bad quality,Calibrate laser
+Error RTC_01_5,Calibrate using E+E probes
+Error RTC_01_5,Calibrate flatbed scanner
+software error,Change bottom column
+Ventilation error,Change build chamber carrier plate
+Error XLINE_02_12,Change chamber light
+Not using original powder,Change clampex
+Recoater in wrong position,Change coater cover belt angle bar
+Excess conductivity fault,Change door O-ring
+Temperature too high,Change laser chiller
+P/S alarms,Change process theme
+A2X,Change pump
+Air conditioner unit faulty,change setting
+Air flow fluctuating,Change pilz main basic end plug
+Laser alignment error,Changed. laser
+Laser alignment error,Check breaker
+Arc trip error,Check build files
+Arc trip error,Check cables
+ASC calibration error,Check cables
+Beam auto calibration fail,Check drive
+Beam auto calibration fail,Check error code
+Axis error,Check field correction
+Back reflection error,Check focus
+B&R communication error,Check for level
+Powder distribution issue,Check if powder leaked
+Door sensor malfunctioning,Check laser equalization
+Build parts bad quality,Check laser position
+Build parts bad quality,Check laser power
+Build parts bad quality,Check laser power
+Build parts bad quality,Check laser rail system
+Build parts bad quality,Check line connection
+Build parts bad quality,Mechanical calibration
+Vacuum not sufficient,Check mounted correct
+Laser focus failure,Check powder damaged
+Laser alignment error,Check build files
+Beam auto calibration fail,Check the clampx
+Beam interfered with gun,Check curve power
+Beam interfered with gun,Checked machine
+Bearing set broken,Check optical system
+Build parts bad quality,Check scanner
+Filter broken,Chiller failing
+Powder melting error,Clean
+Build assembler not working,Clean machine
+Build chamber stuck,Clean machine
+Build chamber stuck,Clean o-ring
+Build chamber stuck,Cross tigthen bolts
+Build chamber error,Decommissioning machine
+Build chamber stuck,Training customer
+Build chamber stuck,Dismount build chamber
+Build chamber stuck,Dismount heating plate
+Build chamber tracking error,laser
+Build chamber won't reference,Laser over heating
+Build chamber won't reference,Lower platform then start build
+build crashing,Calibrate machine 
+Build dimension discrepancies,Check laser power
+build crashing,Mechanical calibration
+Build fail,Move machine
+Build parts bad quality,Needs more melt area
+Build layer defect,New powder
+Build not moving from handling station,Calibrate optics
+Build part porous,Calibrate optics
+Part out of quality specs,Calibrate optics
+Build parts defects,Calibrate optics
+Build piston not responding,Check parameters
+Build plate error,Check ventilator
+Build plate heater failing,Pump
+Build plate heater failing,Re-calibrate
+Build plate not even,Calibrate optics
+Build plate outside tolerance,Calibrate laser power
+Build chamber stuck,Reload FC file
+Build problems,Remote support
+Build parts bad quality,Replace rake
+Build chamber stuck,Replace scan head
+Build will not start,Repositioned safety stoppers
+Build part warped,Restart
+Build chamber stuck,Restart machine
+Built table top damaged,Run flatbed scanner
+Build part burned,Calibrate sensor
+Lift table burned,Service optical system
+Burning smell,Set can position
+calibration error,Set setting.
+Calibration error,Table calibration
+Beam auto calibration fail,Tighten build chamber
+Calibration error,Tighten connector
+Camera sensors error,Tighten connector wire
+Shutter error,Track coater
+Axis reference error,Track machine calibration
+Build chamber stuck,Train customer
+Carbon dust inside scanhead,Transfer software to customer
+Chiller error,
+Chiller flow sensor error,
+Chiller has worn bearing,
+Chiller tripped,
+Coater does not move,
+Coater drive not working,
+Coater target position not reached,
+Compressed air error,
+Compressed air error,
+Computer not powering on,
+Condensate leak,
+Contouring error,
+Controlled vac out of range error,
+Cooling capacity low,
+Cooling system error,
+JAT drive connection error,
+Focus error,
+Build parts bad quality,
+Cut seal,
+Deviation error,
+Filter dirty,
+Display does not power up,
+Display does not power up,
+Displaying erroneous temperature,
+Focus error,
+Disturbance oxygen sensor,
+DKK error,
+door not sealing,
+Dose chamber malfunctioning,
+Dose chamber not able to reference,
+Electrical cabinet overheating,
+Encoder counting error,
+End position positive powder chamber,
+Build chamber erosion,
+Error doesn't clear,
+Error reset button flashing,
+Excessive control deviation,
+Focus error,
+Fan error,
+Fans making noises,
+Fans not blowing,
+Filament shut down error,
+Chiller flow sensor error,
+Focus error,
+Focus error,
+Focus error,
+Focus not steady,
+Focus shift,
+Laser alignment error,
+Setting error,
+Grid too low error,
+Grid too low error,
+Grid zero error,
+Guide rails broken,
+Guide rails noisy,
+Hardware error,
+Heating failing,
+Heating failing,
+Heating failing,
+Heating failing,
+Heating failing,
+Heating failing,
+Heating limiter error,
+Heating failing,
+Heating failing,
+Build parts bad quality,
+HV out of range,
+PLC connection error,
+HV error,
+HV error,
+HV error,
+HV out of range,
+Hv unit can't start,
+Inflatable seal not sealing,
+Internal circuit temperature above typical value,
+Internal error,
+Ion traps hole not round,
+Ion trap warning error,
+Meltpool monitoring system issues,
+Smoke detection,
+Jamming,
+Laser attenuation,
+Laser cannot fire,
+Laser cooling unit facing error,
+Laser error,
+Laser fibre interlock error,
+Laser alignment error,
+Laser not ellipticity,
+Laser points do not coincide,
+Low laser power,
+Laser error,
+HV unit leaking,
+Pump slow,
+Vacuum level reached slowly,
+Loosing inert-gas,
+Powder leaking,
+Laser power low,
+ASC calibration error,
+Error M2_84_10,
+Error M2_84_13,
+Channel compressor faulty,
+M2_84_6,
+Error M2_86_8,
+Error M2_89_2,
+Heating failing,
+M2_89_3,
+Error M2_89_3,
+Error M2_90_12,
+Error M2_91_2,
+Error M2_91_5,
+Error M2_99_25,
+Machine failing,
+Machine failing,
+Machine failing,
+Machine leak,
+Machine failing,
+Machine software locked up,
+Machine tripping power,
+Machine not autocalibrating,
+Machine would not keep calibration,
+Build part porous,
+Powder melting error,
+Thin build error,
+Mesh structure lost in regularity,
+Error MLAB_104,
+Error MLAB_105,
+Error MLAB_701,
+Move machine,
+Multi-beam lines,
+No connection to plc,
+No control of build piston,
+Focus movement error,
+noise heard,
+VarioScan defective,
+Not blowing cold air,
+not sealing,
+O2 sensor not reading properly,
+O2 sensor not reading properly,
+Observation window cracked,
+Old calibration plate,
+Old software,
+Shutter error,
+Optic system cooling low,
+Optics displaying errors,
+Optics not correcting,
+Elliptical Issue,
+OS2 asc reference error,
+OS2 repeatability error,
+Oxygen sensor malfunctioning,
+Build part burned,
+Build parts defects,
+Part surface torn off,
+Powder melting error,
+Parts cannot be processed,
+Parts out of tolerance,
+PC slow,
+Build parts bad quality,
+Seal dislocating,
+Pilz will not receive power,
+PLC will not receive power,
+Plc error,
+Plc will not receive power,
+Pm.,
+Build parts bad quality,
+Positioning switch error,
+Powder,
+Powder leaking,
+Powder blown up,
+Powder leaking,
+Powder distribution issue,
+Powder leaking,
+Powder leaking,
+Powder leaking,
+Powder not flowing through sieve screen,
+Powder melting error,
+Powder melting error,
+Powder regulator not getting pulses,
+Powder sensor malfunctioning,
+Powder sensor malfunctioning,
+Powder sensor malfunctioning,
+Powder sensor malfunctioning,
+Powder sensor malfunctioning,
+Powder stamp does not retract,
+Powder sensor malfunctioning,
+Power error,
+power outage,
+Heating failing,
+Printing mismatch,
+Build parts bad quality,
+Machine won't start,
+Caster error,
+Optics damaged,
+Process gas argon error,
+Pump not working,
+Pump not working,
+Pump not working,
+Pump not working,
+Pump making noise,
+Qmm not adjusted,
+Rake Error,
+Rake positoin shifted,
+Rake sensor,
+Rake sensors failing,
+Rake Error,
+Raking zero pulses,
+Ran out of powder,
+Refill not possible,
+Move machine,
+Remanence lines,
+Reset will not clear error.,
+Rough surface on products,
+Roughness issues,
+RTC5 error,
+Error RTC_01_5,
+Powder melting error,
+Sat box build failed,
+Scanner down,
+Coater making scrapping noise,
+Chamber scratched,
+Lens scratched,
+Seal error,
+Sensor indicators malfunctioning,
+Sensor error,
+Error SH_51_05,
+Side channel blower error,
+Sieve screen clogged,
+PC slow,
+Smoke detection,
+Smoke detection,
+Smoke error,
+Smoke detection,
+build crashing,
+Focus shift,
+Surface finish quality issue.,
+Build parts bad quality,
+Build part warped,
+Build part warped,
+Table error,
+Table lock errors,
+Table lock error,
+Temperature error,
+Temperature error,
+Temperature too high,
+Thin build error,
+Loosing inert-gas,
+Machine tripping power,
+Machine tripping power,
+Build fail,
+Vacuum not sufficient,
+Vacuum not working,
+vacuum not working,
+Vacuum pressure not going down,
+Valve sticking,
+Variations between parts,
+Varioscan power error,
+Varioscan power error,
+Ventilation error,
+Ventilator not enabled,
+Water chiller not running,
+Build parts bad quality,
+Wavy lines,
+Build parts bad quality,
+Without rails error,
+Skipping layers,
+Without sliders error,
+X-deflection shrinkage/expansion.,
+Z-axis beam verification failed,
+DLL not found,
+Grid too low error,
+Volume flow top sensor error,

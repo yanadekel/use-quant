@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from "axios";
 import {
   StyledContainer,
@@ -17,23 +17,24 @@ const CreateForm = (props) => {
   const base = "/api/useQuant";
   const [projectName, setProjectName] = useState('');
   const [costumerName, setCostumerName] = useState('');
+  const [fileName, setFileName] = useState('');
   const [selectedFile, setSelectedFile] = useState('');
 
 
 
-  const fetchPostData = async () => {
+  const fetchPostData = async (req, res) => {
 
 
     try {
-      // console.log('4 fatch: ' + projectName)
       const response = await axios.post(`${base}/projects`, {
         projectName,
         costumerName,
+        fileName,
 
       });
-      // console.log("mathilim "+response.data)
+      console.log(response);
       prompt("Project Created");
-     
+
 
     } catch (error) {
       console.log(error);
@@ -49,20 +50,16 @@ const CreateForm = (props) => {
   }
 
   const onChangeHandler = (event) => {
-     setSelectedFile(event.target.files[0]);
-     console.log(selectedFile)
+    setSelectedFile(event.target.files[0]);
+    console.log(selectedFile)
   }
 
 
-  const formClickHandler =  async() => {
-    console.log("1"+selectedFile.name);
-    // if (projectName !== selectedFile.name) {
-    //   console.log("2"+selectedFile.name)   
-    // }
-    await setProjectName(selectedFile.name)
-    // console.log('3:' +projectName)
-    //  await fetchPostData();
-  // reset();
+  const formClickHandler = async () => {
+    console.log("1" + selectedFile.name);
+    await fetchPostData();
+
+    reset();
   }
 
   const fileClickHandler = () => {
@@ -71,20 +68,19 @@ const CreateForm = (props) => {
     axios.post(`${base}/fils`, data, {
 
     }).then(res => {
-      console.log(res.data)
+      setFileName(selectedFile.name);
+      console.log(res.data, fileName);
     })
-    
+
   }
 
   const reset = () => {
+    setProjectName('');
     setCostumerName('');
-    
+    setFileName('');
+
   }
 
-  useEffect(() => {
-    fetchPostData();
-    
-  }, [projectName])
 
   return (
     <>
@@ -92,14 +88,14 @@ const CreateForm = (props) => {
       <StyledContainer>
         <Margin margin="20px" direction="virtical" />
         <FormContainer onSubmit={formHandler}>
-          {/* <BoldLink href="#"> Project Name</BoldLink>
-          <Input type="text" onChange={(e) => setProjectName(e.target.value)} placeholder="Add Project Name" /> */}
+          <BoldLink href="#"> Project Name</BoldLink>
+          <Input type="text" value={projectName} onChange={(e) => setProjectName(e.target.value)} placeholder="Add Project Name" />
           <Margin margin="20px" direction="virtical" />
           <BoldLink href="#"> Costumer Name</BoldLink>
           <Input type="text" value={costumerName} onChange={(e) => setCostumerName(e.target.value)} placeholder="Costumer Name" />
           <Margin margin="20px" direction="virtical" />
           <BoldLink href="#"> Uploud File</BoldLink>
-          <Input type="file"  name="file" onChange={onChangeHandler} />
+          <Input type="file" name="file" onChange={onChangeHandler} />
           <Button buttonStyle='btn--outline2' accept="*.csv" onClick={fileClickHandler}>Upload File</Button>
         </FormContainer>
         <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={formClickHandler}>CREATE PROJECT</OnSubmitButton>
