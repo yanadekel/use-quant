@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "fast-csv": "^4.3.6",
+    "heroku-builds": "^0.0.29",
     "json2csv": "^5.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.6",

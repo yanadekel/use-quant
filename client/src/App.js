@@ -52,12 +52,12 @@ const App = () => {
           <Route path="/projects" >
             <ProjectsTable />
           </Route>
-          <Route path="/heatTable" >
+          <Route path="/matrix" >
 
           </Route>
-          <Route path="/upload" >
+          {/* <Route path="/upload" >
             <FileUpload />
-          </Route>
+          </Route> */}
         </Switch>
       {/* </div> */}
     </BrowserRouter>

@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const File = require('../models/file.model');
-var csv = require('fast-csv');
-const Mongoose = require('mongoose');
+const csv = require('fast-csv');
 const Matrix = require('../models/Matrix.model');
 const fs = require('fs');
 
@@ -61,7 +59,11 @@ router.post('/', upload, async (req, res) => {
     stream.pipe(csvStream);
   });
 
-});
+})
+.get('/', (req, res) => {
+  projectsController.getAllFiles(req, res);
+
+})
 
 
 module.exports = router;

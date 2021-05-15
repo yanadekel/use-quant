@@ -69,8 +69,8 @@ const activeMode= (mode) =>{
               </Link>
               </li>
               <li className="navItem">
-                <Link to='/heatmap' className="navLinks" onClick={closeMobileMenue}>
-                  Heatmap Table
+                <Link to='/matrix' className="navLinks" onClick={closeMobileMenue}>
+                  Matrix Table
               </Link>
               </li>
               <li className="navBtn">
