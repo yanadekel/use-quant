@@ -8,6 +8,10 @@ const MatrixSchema = new mongoose.Schema({
     //     trim: true,
     //     ref: 'User',
     // },
+    filename:{
+        type:String,
+        // unique:true
+    },
     observations: [],
     solutions: [],
     frequency: {

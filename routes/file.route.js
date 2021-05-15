@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file');
 
 router.post('/', upload, async (req, res) => {
-  upload(req, res, function (err) {
+  upload(req, res,  (err)=> {
     if (err instanceof multer.MulterError) {
       return res.status(500).json(err)
     } else if (err) {
@@ -48,7 +48,8 @@ router.post('/', upload, async (req, res) => {
       solutions.shift();
         const matrix = new Matrix({
           observations,
-          solutions,          
+          solutions,
+          filename: heatmapFile.filename         
         });
         matrix.save();
       })
