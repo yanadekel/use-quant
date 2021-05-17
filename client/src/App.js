@@ -53,8 +53,8 @@ const App = () => {
     try {
       const response = await axios.get(`/api/useQuant/fils/file/${fileName}`);
       const data = ((response && response.data));
-      console.log(data[0]);
-      setFile(data[0]);
+      console.log(data);
+      setFile(data);
       setFileToggle(true);
     } catch (error) {
       console.log(error);
@@ -79,7 +79,7 @@ const App = () => {
     signToAccount();
     fetchProjects();
     // fetchActiveProjects();
-  }, [active]);
+  }, [active, file]);
 
   return (<>
     <BrowserRouter>
