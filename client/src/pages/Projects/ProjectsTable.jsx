@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React from 'react';
 import styled from "styled-components";
 import TableQuant from "./TableQuant";
 import { Margin } from "../../components/margin/Margin";
@@ -66,28 +65,28 @@ const SmallText = styled.h3`
   margin-top: 7px;
 `;
 
-const OnSubmitButton = styled.button`
-  align-items:center;
-  width: 100%;
-  padding: 11px;
-  margin:auto;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  border-radius:none;
-  cursor: pointer;
-  transition: all, 240ms ease-in-out;
-  background: rgb(40, 78, 103);
-  background: linear-gradient(
-    58deg,
-    rgba(40, 78, 103, 1) 35%,
-    rgba(18, 45, 62, 1) 100%
-  );
-  &:hover {
-    filter: brightness(1.03);
-  }
-`;
+// const OnSubmitButton = styled.button`
+//   align-items:center;
+//   width: 100%;
+//   padding: 11px;
+//   margin:auto;
+//   color: #fff;
+//   font-size: 15px;
+//   font-weight: 600;
+//   border: none;
+//   border-radius:none;
+//   cursor: pointer;
+//   transition: all, 240ms ease-in-out;
+//   background: rgb(40, 78, 103);
+//   background: linear-gradient(
+//     58deg,
+//     rgba(40, 78, 103, 1) 35%,
+//     rgba(18, 45, 62, 1) 100%
+//   );
+//   &:hover {
+//     filter: brightness(1.03);
+//   }
+// `;
 
 
 

@@ -3,11 +3,11 @@ const validator = require("validator");
 
 
 const ProjectSchema =  mongoose.Schema({
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'Matrix',
-  },
+  // owner: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: 'Matrix',
+  // },
 
   costumerName: {
     type: String,

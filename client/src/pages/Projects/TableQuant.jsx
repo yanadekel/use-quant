@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table } from '../../components/Table.component/Table';
 import { Margin } from "../../components/margin/Margin";
 import { Link } from 'react-router-dom';

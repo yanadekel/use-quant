@@ -9,7 +9,7 @@ const createProject = async (req, res) => {
   const {costumerName, projectName, fileName, isActive, date  } = req.body;
 
   const project = new Project({
-    owener:req.Matrix._id,
+    // owener:req.Matrix._id,
     projectName,
     costumerName,
     fileName,

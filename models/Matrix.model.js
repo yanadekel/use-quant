@@ -18,11 +18,11 @@ const MatrixSchema = new mongoose.Schema({
 
 });
 
-MatrixSchema.virtual('projects', {
-    ref: 'Project',
-    localField: '_id',
-    foreignField: 'owner',
-})
+// MatrixSchema.virtual('projects', {
+//     ref: 'Project',
+//     localField: '_id',
+//     foreignField: 'owner',
+// })
 
 const Matrix = mongoose.model('Matrix', MatrixSchema);
 
