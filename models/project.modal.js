@@ -5,9 +5,8 @@ const validator = require("validator");
 const ProjectSchema =  mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    required: false,
-    trim: true,
-    ref: 'User',
+    required: true,
+    ref: 'Matrix',
   },
 
   costumerName: {
@@ -17,6 +16,7 @@ const ProjectSchema =  mongoose.Schema({
     lowercase: true,
     ltrim: true,
     rtrim: true,
+    minLength:1
   },
 
   projectName: {
@@ -25,12 +25,14 @@ const ProjectSchema =  mongoose.Schema({
     rtrim: true,
     require: true,
     lowercase: true,
-    // unique: true,
+    minLength:1,
+    unique: true,
   },
 
   fileName: {
    type:String,
-   
+   unique:true,
+   required: true,
   },
 
   isActive: {

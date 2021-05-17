@@ -19,6 +19,7 @@ const CreateForm = (props) => {
   const [costumerName, setCostumerName] = useState('');
   const [fileName, setFileName] = useState('');
   const [selectedFile, setSelectedFile] = useState('');
+  const [fileId, setFileId]= useState('');
 
 
 
@@ -69,7 +70,8 @@ const CreateForm = (props) => {
 
     }).then(res => {
       setFileName(selectedFile.name);
-      console.log(res.data, fileName);
+      console.log(res.data.id, fileName);
+      
     })
 
   }
@@ -78,6 +80,7 @@ const CreateForm = (props) => {
     setProjectName('');
     setCostumerName('');
     setFileName('');
+    setSelectedFile('');
 
   }
 

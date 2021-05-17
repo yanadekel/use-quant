@@ -2,15 +2,11 @@ const mongoose = require('mongoose');
 
 
 const MatrixSchema = new mongoose.Schema({
-    // owner: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     required: true,
-    //     trim: true,
-    //     ref: 'User',
-    // },
+
     filename:{
         type:String,
-        // unique:true
+        unique:true,
+        required: true,
     },
     observations: [],
     solutions: [],
@@ -21,6 +17,12 @@ const MatrixSchema = new mongoose.Schema({
     },
 
 });
+
+MatrixSchema.virtual('projects', {
+    ref: 'Project',
+    localField: '_id',
+    foreignField: 'owner',
+})
 
 const Matrix = mongoose.model('Matrix', MatrixSchema);
 

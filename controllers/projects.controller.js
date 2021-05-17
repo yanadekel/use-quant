@@ -6,9 +6,10 @@ const Project = require('../models/project.modal');
 
 const createProject = async (req, res) => {
 
-  const { costumerName, projectName, fileName, isActive, date  } = req.body;
+  const {costumerName, projectName, fileName, isActive, date  } = req.body;
 
   const project = new Project({
+    owener:req.Matrix._id,
     projectName,
     costumerName,
     fileName,
@@ -60,7 +61,7 @@ const getProjectById = async (req, res) => {
     return res.status(200).send(project)
 
   } catch (e) {
-    return res.status(200).send("no user")
+    return res.status(500).send("no user")
   }
 
 }

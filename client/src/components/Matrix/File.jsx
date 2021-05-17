@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React from 'react';
 import styled from "styled-components";
-import TableQuant from "./TableQuant";
+import Matrix from './Matrix';
 import { Margin } from "../../components/margin/Margin";
+
 
 
 const StyledView = styled.body`
@@ -89,22 +89,29 @@ const OnSubmitButton = styled.button`
   }
 `;
 
-
-
-
-const ProjectsTable = ({projects, activeProjects, fetchFile}) => {
-
-
+function File({file}) {
+  // console.log(file.observations.length)
+  // console.log(file.solutions.length)
+  // console.log(file.observations)
+  // console.log(file.solutions)
+  // console.log(file.frequency)
   return (<>
     <StyledView >
       <StyledContainer>
         <HeaderContainer>
           <Margin margin="50px" direction="virtical" />
-          <HeaderText>Projects Table</HeaderText>
-          <SmallText>View All projects</SmallText>
+          <HeaderText>Project Chart</HeaderText>
+          <SmallText></SmallText>
         </HeaderContainer>
         <InnerContainer>
-          <TableQuant projects={projects} activeProjects={activeProjects} fetchFile={fetchFile} />
+          <Matrix 
+          // xLabelsLength={file.observations.length} 
+          // yLabelsLength={file.solutions.length}
+          filexLabels={file.observations}
+          fileyLabels={file.solutions}
+          fileData={file.frequency}
+          
+          />
         </InnerContainer>
         <Margin margin={10} direction="virtical" />
       </StyledContainer>
@@ -113,5 +120,5 @@ const ProjectsTable = ({projects, activeProjects, fetchFile}) => {
   )
 }
 
-export default ProjectsTable;
+export default File
 
