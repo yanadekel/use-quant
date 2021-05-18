@@ -113,7 +113,7 @@ const expandingTransition = {
   stiffness: 30,
 };
 
-const AddProject = () => {
+const AddProject = ({updateProjects}) => {
   const [isExpanded, setExpanded] = useState(false);
 
   // const expandingAnimation = () => {

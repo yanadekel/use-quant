@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
 import Matrix from './Matrix';
 import { Margin } from "../../components/margin/Margin";
+import Spinner from "../Spinner/Spinner";
+import Bunner from "../Bunner/Bunner";
 
 
 
@@ -17,7 +19,7 @@ align-items:center;
 
 `
 const StyledContainer = styled.div`
-  width: 50%;
+  width: 70%;
   min-height: fit-content;
   display: flex;
   flex-direction: column;
@@ -37,6 +39,7 @@ const StyledContainer = styled.div`
 const InnerContainer = styled.div`
   width: 100%;
   display: flex;
+  aligh-items: center;
   flex-direction: column;
   padding: 0 32px;
   min-height:fit-content;
@@ -89,36 +92,48 @@ const OnSubmitButton = styled.button`
   }
 `;
 
-function File({file}) {
-  // console.log(file.observations.length)
-  // console.log(file.solutions.length)
-  // console.log(file.observations)
-  // console.log(file.solutions)
-  // console.log(file.frequency)
+const File= ({file}) =>{
+  console.log("File: file");
+  console.log(file);
+  // const [showSpinner, setShowSpinner] = useState(true);
+
+  // const loading = () => {
+  //   setTimeout(() => {
+  //     setShowSpinner(false);
+  //   }, 3000);
+  //   if (showSpinner) {
+  //     return <Spinner />;
+  //   }
+  //   return <Bunner />;
+  // };
+
+  // if (!file) return loading(); 
+
+
   return (<>
+
     <StyledView >
       <StyledContainer>
         <HeaderContainer>
           <Margin margin="50px" direction="virtical" />
           <HeaderText>Project Chart</HeaderText>
-          <SmallText></SmallText>
         </HeaderContainer>
         <InnerContainer>
           <Matrix 
-          // xLabelsLength={file.observations.length} 
-          // yLabelsLength={file.solutions.length}
+          file={file}
           filexLabels={file.observations}
           fileyLabels={file.solutions}
-          fileData={file.frequency}
-          
+          fileData={file.frequency}  
           />
         </InnerContainer>
         <Margin margin={10} direction="virtical" />
       </StyledContainer>
     </StyledView>
+   
   </>
+  
   )
 }
 
-export default File
+export default File;
 

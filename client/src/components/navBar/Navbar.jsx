@@ -68,11 +68,11 @@ const activeMode= (mode) =>{
                   Projects
               </Link>
               </li>
-              <li className="navItem">
+              {/* <li className="navItem">
                 <Link to='/matrix' className="navLinks" onClick={closeMobileMenue}>
                   Matrix Table
               </Link>
-              </li>
+              </li> */}
               <li className="navBtn">
                 {button ? (
                   <Link to='/signToAccount' value="login" onClick={()=>activeMode("login")} className="btnLink">

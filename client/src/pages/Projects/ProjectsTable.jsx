@@ -91,7 +91,7 @@ const SmallText = styled.h3`
 
 
 
-const ProjectsTable = ({projects, activeProjects, fetchFile}) => {
+const ProjectsTable = ({projects, activeProjects, updateFile}) => {
 
 
   return (<>
@@ -103,7 +103,7 @@ const ProjectsTable = ({projects, activeProjects, fetchFile}) => {
           <SmallText>View All projects</SmallText>
         </HeaderContainer>
         <InnerContainer>
-          <TableQuant projects={projects} activeProjects={activeProjects} fetchFile={fetchFile} />
+          <TableQuant projects={projects} activeProjects={activeProjects} updateFile={updateFile} />
         </InnerContainer>
         <Margin margin={10} direction="virtical" />
       </StyledContainer>

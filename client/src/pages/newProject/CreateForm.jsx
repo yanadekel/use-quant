@@ -13,14 +13,13 @@ import { Margin } from "../../components/margin/Margin";
 import { Button } from '../../components/btn/Button';
 
 
-const CreateForm = (props) => {
+const CreateForm = ({updateProjects}) => {
   const base = "/api/useQuant";
   const [projectName, setProjectName] = useState('');
   const [costumerName, setCostumerName] = useState('');
   const [fileName, setFileName] = useState('');
   const [selectedFile, setSelectedFile] = useState('');
-  const [fileId, setFileId]= useState('');
-
+  
 
 
   const fetchPostData = async (req, res) => {
@@ -35,7 +34,7 @@ const CreateForm = (props) => {
       });
       console.log(response);
       prompt("Project Created");
-
+      updateProjects(response);
 
     } catch (error) {
       console.log(error);
@@ -57,7 +56,6 @@ const CreateForm = (props) => {
 
 
   const formClickHandler = async () => {
-    console.log("1" + selectedFile.name);
     await fetchPostData();
 
     reset();

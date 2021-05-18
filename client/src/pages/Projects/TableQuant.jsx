@@ -1,14 +1,28 @@
 import React from 'react';
 import { Table } from '../../components/Table.component/Table';
 import { Margin } from "../../components/margin/Margin";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
-function TableQuant({ projects, activeProjects,fetchFile }) {
 
-  const handleClick= (fileName)=>{
+
+
+const TableQuant = ({ projects, activeProjects, updateFile }) => {
+  const history = useHistory();
+
+  const handleClick = async (fileName) => {
     console.log(fileName);
-    fetchFile(fileName);
+    try {
+      const response = await axios.get(`/api/useQuant/fils/file/${fileName}`);
+      const data = response.data[0];
+      await updateFile(data)
+      await history.push("/matrix")
+
+    } catch (error) {
+      console.log(error);
+    }
   }
+
 
   const renderHeader = () => {
     let headerElement = ['Project-Name', 'Costumer', 'File', 'Date']
@@ -25,7 +39,7 @@ function TableQuant({ projects, activeProjects,fetchFile }) {
           <td>{project.projectName}</td>
           <td>{project.costumerName}</td>
           <td className='opration'>
-            <Link onClick={() => handleClick(project.fileName)} style={{ color: "inherit", textDecoration: "none" }} to='/matrix'>
+            <Link onClick={() => handleClick(project.fileName)} style={{ color: "inherit", textDecoration: "none" }} to='/'>
               {project.fileName}
             </Link>
           </td>
