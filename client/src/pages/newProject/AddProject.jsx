@@ -141,7 +141,7 @@ const AddProject = ({updateProjects}) => {
 
         </TopContainer>
         <InnerContainer>
-          <CreateForm />
+          <CreateForm updateProjects={updateProjects} />
         </InnerContainer>
       </StyledContainer>
     </StyledView>

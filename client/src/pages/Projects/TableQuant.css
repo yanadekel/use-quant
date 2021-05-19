@@ -1,0 +1,10 @@
+.metrixClick {
+  background-color: inherit;
+  color: inherit;
+  border:none;
+  box-shadow: inherit;
+}
+
+.metrixClick:hover {
+  cursor: pointer;
+}

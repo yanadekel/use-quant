@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Matrix from './Matrix';
 import { Margin } from "../../components/margin/Margin";
-import Spinner from "../Spinner/Spinner";
+// import Spinner from "../Spinner/Spinner";
 import Bunner from "../Bunner/Bunner";
 
 
@@ -60,41 +60,43 @@ const HeaderText = styled.h2`
   margin:auto;
 `;
 
-const SmallText = styled.h3`
-  color: #fff;
-  font-weight: 500;
-  font-size: 15px;
-  z-index: 10;
-  margin: auto;
-  margin-top: 7px;
-`;
+// const SmallText = styled.h3`
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 15px;
+//   z-index: 10;
+//   margin: auto;
+//   margin-top: 7px;
+// `;
 
-const OnSubmitButton = styled.button`
-  align-items:center;
-  width: 100%;
-  padding: 11px;
-  margin:auto;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  border-radius:none;
-  cursor: pointer;
-  transition: all, 240ms ease-in-out;
-  background: rgb(40, 78, 103);
-  background: linear-gradient(
-    58deg,
-    rgba(40, 78, 103, 1) 35%,
-    rgba(18, 45, 62, 1) 100%
-  );
-  &:hover {
-    filter: brightness(1.03);
-  }
-`;
+// const OnSubmitButton = styled.button`
+//   align-items:center;
+//   width: 100%;
+//   padding: 11px;
+//   margin:auto;
+//   color: #fff;
+//   font-size: 15px;
+//   font-weight: 600;
+//   border: none;
+//   border-radius:none;
+//   cursor: pointer;
+//   transition: all, 240ms ease-in-out;
+//   background: rgb(40, 78, 103);
+//   background: linear-gradient(
+//     58deg,
+//     rgba(40, 78, 103, 1) 35%,
+//     rgba(18, 45, 62, 1) 100%
+//   );
+//   &:hover {
+//     filter: brightness(1.03);
+//   }
+// `;
 
-const File= ({file}) =>{
-  console.log("File: file");
-  console.log(file);
+const File = ({ appFile }) => {
+  console.log("File Component");
+  console.log("File get appFile");
+  console.log(appFile);
+  // console.log(appFile);
   // const [showSpinner, setShowSpinner] = useState(true);
 
   // const loading = () => {
@@ -107,31 +109,31 @@ const File= ({file}) =>{
   //   return <Bunner />;
   // };
 
-  // if (!file) return loading(); 
+  // if (!appFile) return loading(); 
 
 
   return (<>
-
-    <StyledView >
-      <StyledContainer>
-        <HeaderContainer>
-          <Margin margin="50px" direction="virtical" />
-          <HeaderText>Project Chart</HeaderText>
-        </HeaderContainer>
-        <InnerContainer>
-          <Matrix 
-          file={file}
-          filexLabels={file.observations}
-          fileyLabels={file.solutions}
-          fileData={file.frequency}  
-          />
-        </InnerContainer>
-        <Margin margin={10} direction="virtical" />
-      </StyledContainer>
-    </StyledView>
-   
+    {/* {appFile ? */}
+      (<StyledView >
+        <StyledContainer>
+          <HeaderContainer>
+            <Margin margin="50px" direction="virtical" />
+            <HeaderText>Project Chart</HeaderText>
+          </HeaderContainer>
+          <InnerContainer>
+            <Matrix
+              appFile={appFile}
+              // appFilexLabels={appFile.observations}
+              // appFileyLabels={appFile.solutions}
+              // appFileData={appFile.frequency}
+            />
+          </InnerContainer>
+          <Margin margin={10} direction="virtical" />
+        </StyledContainer>
+      </StyledView>)
+      {/* : (<Bunner />)} */}
   </>
-  
+
   )
 }
 

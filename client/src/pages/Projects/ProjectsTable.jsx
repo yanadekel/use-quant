@@ -91,8 +91,14 @@ const SmallText = styled.h3`
 
 
 
-const ProjectsTable = ({projects, activeProjects, updateFile}) => {
+const ProjectsTable = ({ projects, activeProjects, updateFileFromApp}) => {
 
+  // const updateFileTable = (file)=>{
+    
+  //   console.log('ProjectsTable.updateFileTable file data in project table');
+  //   console.log(file);
+  //   updateFile(file)
+  // }
 
   return (<>
     <StyledView >
@@ -103,7 +109,7 @@ const ProjectsTable = ({projects, activeProjects, updateFile}) => {
           <SmallText>View All projects</SmallText>
         </HeaderContainer>
         <InnerContainer>
-          <TableQuant projects={projects} activeProjects={activeProjects} updateFile={updateFile} />
+          <TableQuant projects={projects} activeProjects={activeProjects} updateFileFromApp={updateFileFromApp} />
         </InnerContainer>
         <Margin margin={10} direction="virtical" />
       </StyledContainer>
