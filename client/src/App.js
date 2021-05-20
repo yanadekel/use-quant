@@ -104,10 +104,7 @@ const App = () => {
         
         return (<>
     <BrowserRouter>
-      {/* <div className="AppHeader" style={{ height: "" }}> */}
       <Navbar signToAccount={signToAccount} />
-      {/* </div> */}
-      {/* <div className="AppBody" style={{ height: "" }}> */}
       <Switch>
         <Route exact path="/" >
           <HomePage signToAccount={signToAccount} />
@@ -125,7 +122,6 @@ const App = () => {
           <File appFile={file} />
         </Route>
       </Switch>
-      {/* </div> */}
     </BrowserRouter>
   </>
 

@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Matrix from './Matrix';
 import { Margin } from "../../components/margin/Margin";
-// import Spinner from "../Spinner/Spinner";
-import Bunner from "../Bunner/Bunner";
+
 
 
 
@@ -19,8 +18,8 @@ align-items:center;
 
 `
 const StyledContainer = styled.div`
-  width: 70%;
-  min-height: fit-content;
+  width: 50%;
+  min-height: 70%;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
@@ -40,9 +39,11 @@ const InnerContainer = styled.div`
   width: 100%;
   display: flex;
   aligh-items: center;
-  flex-direction: column;
-  padding: 0 32px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 0px;
   min-height:fit-content;
+  margin: 15px auto;
   
 `;
 const HeaderContainer = styled.div`
@@ -57,7 +58,7 @@ const HeaderText = styled.h2`
   line-height: 1.24;
   color: #fff;
   z-index: 10;
-  margin:auto;
+  margin: 15px auto;
 `;
 
 // const SmallText = styled.h3`
@@ -93,45 +94,21 @@ const HeaderText = styled.h2`
 // `;
 
 const File = ({ appFile }) => {
-  console.log("File Component");
-  console.log("File get appFile");
-  console.log(appFile);
-  // console.log(appFile);
-  // const [showSpinner, setShowSpinner] = useState(true);
-
-  // const loading = () => {
-  //   setTimeout(() => {
-  //     setShowSpinner(false);
-  //   }, 3000);
-  //   if (showSpinner) {
-  //     return <Spinner />;
-  //   }
-  //   return <Bunner />;
-  // };
-
-  // if (!appFile) return loading(); 
-
-
   return (<>
-    {/* {appFile ? */}
-      (<StyledView >
-        <StyledContainer>
-          <HeaderContainer>
-            <Margin margin="50px" direction="virtical" />
-            <HeaderText>Project Chart</HeaderText>
-          </HeaderContainer>
-          <InnerContainer>
-            <Matrix
-              appFile={appFile}
-              // appFilexLabels={appFile.observations}
-              // appFileyLabels={appFile.solutions}
-              // appFileData={appFile.frequency}
-            />
-          </InnerContainer>
-          <Margin margin={10} direction="virtical" />
-        </StyledContainer>
-      </StyledView>)
-      {/* : (<Bunner />)} */}
+    <StyledView >
+      <StyledContainer>
+        <HeaderContainer>
+          <Margin margin="50px" direction="virtical" />
+          <HeaderText>Project Chart</HeaderText>
+        </HeaderContainer>
+        <InnerContainer>
+          <Matrix
+            appFile={appFile}
+          />
+        </InnerContainer>
+        <Margin margin={10} direction="virtical" />
+      </StyledContainer>
+    </StyledView>
   </>
 
   )

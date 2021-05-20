@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 // import HeatMap from "react-heatmap-grid";
 import HeatMap from "../Heatmap/HeatMap.jsx";
-// import Bunner from "../Bunner/Bunner";
-// import Spinner from "../Spinner/Spinner";
+
 
 
 
 const Matrix = ({ appFile }) => {
-  // const [showSpinner, setShowSpinner] = useState(true);
   console.log("Matrix Component")
   const [matrixData, setMatrixData] = useState([]);
-  const [coordinates, setCoord] = useState();
+ 
 
   console.log("Matrix appFile");
   console.log(appFile);
@@ -18,7 +16,6 @@ const Matrix = ({ appFile }) => {
   const xLabels = appFile.observations.slice(0, 10);
   const yLabels = appFile.solutions.slice(0, 10);
   let clicked;
-
 
 
 
@@ -47,33 +44,35 @@ const Matrix = ({ appFile }) => {
   const updateMatrixData = (x, y) => {
     console.log("Matrix.updateMatrixData if else")
     console.log("Matrix.updateMatrixData MatrixData")
-    let data = matrixData;
-    data[x][y] = data[x][y] + 1;
+    let newData = { ...matrixData };
+
+    newData[x][y] = (newData[x][y] + 1 <= 3) ? newData[x][y] + 1 : 0
+
     console.log("Matrix.updateMatrixData setMatrixData")
-    console.log(data)
-    setMatrixData(data);
+    console.log(newData)
+    setMatrixData(newData);
     console.log("Matrix.updateMatrixData MatrixData")
     console.log(matrixData)
   };
 
- 
+
 
   return (
 
-    <div style={{ display: "flex", alignItems: "center", fontSize: "13px" }}>
+    <div style={{ display: "flex", alignItems: "end", fontSize: "13px" }}>
 
       <HeatMap
         xLabels={xLabels}
         yLabels={yLabels}
         xLabelsLocation={"top"}
-        // xLabelsVisibility={xLabelsVisibility}
-        xLabelWidth={60}
+        xLabelWidth={150}
+        yLabelWidth={100}
         data={matrixData}
-        squares
-        height={45}
-        onClick={(y,x) => { updateMatrixData(x, y) }}
+        squares={true}
+        height={60}
+        onClick={(y, x) => { updateMatrixData(x, y) }}
         cellStyle={(background, value, min = 0, max = 3, data, x, y) => ({
-          background: `rgb(0, 151, 230, ${1 - (max - value) / (max - min)})`,
+          background: `rgb(24, 57, 76, ${1 - (max - value) / (max - min)})`,
           fontSize: "11.5px",
           color: "#444"
         })}

@@ -24,7 +24,6 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
                 <h1 className={lightText? 'heading': 'hero_dark'}>{headLine}</h1>
                 <p className={lightTextDescription? 'hero_subtitel':'hero_dark'}>{description}</p>
                 <Link to='/signToAccount' value="signup" style={{marginLeft:"0"}} onClick={()=>{
-                  console.log("execute link Sign into account in Hero1");
                   activeMode("signup")
                   }}>
                   <Button  buttonSize='btn--wide' buttonStyle='btn--secondry'>
