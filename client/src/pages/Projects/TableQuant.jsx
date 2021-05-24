@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from '../../components/Table.component/Table';
 import { Margin } from "../../components/margin/Margin";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './TableQuant.css';
 
@@ -12,7 +12,6 @@ import './TableQuant.css';
 
 const TableQuant = ({ projects, activeProjects, updateFileFromApp }) => {
   console.log("TableQuant Component");
-  // const [fileData, setFileData] = useState({});
   const history = useHistory();
 
 
@@ -23,7 +22,6 @@ const TableQuant = ({ projects, activeProjects, updateFileFromApp }) => {
     try {
       const response = await axios.get(`/api/useQuant/fils/file/${fileName}`);
       const data = response.data[0];
-      // setFileData(data);
       updateFileFromApp(data);
       console.log("TableQuant.handleClick file data from projects table");
       console.log(data);

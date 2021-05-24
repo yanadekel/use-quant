@@ -8,7 +8,7 @@ import { ContextProvider } from "./ContextProvider";
 
 const StyledView = styled.body`
 background-image : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-height: 91vh;
+height: 90vh;
 width:100%;
 background-repeat : no-repeat;
 background-size : cover; 

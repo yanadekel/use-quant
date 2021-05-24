@@ -23,20 +23,15 @@ function Hero({ lightBg, lightText, lightTextDescription, headLine, description,
                 <div className="topLine">{topLine}</div>
                 <h1 className={lightText? 'heading': 'hero_dark'}>{headLine}</h1>
                 <p className={lightTextDescription? 'hero_subtitel':'hero_dark'}>{description}</p>
-                <Link to='/signToAccount' value="signup" style={{marginLeft:"0"}} onClick={()=>{
+                <Link to='/signToAccount' value="signup" style={{margin:"0 20% 0 40%", justifyContent:"center", display:"flex", textDecoration:"none"}} onClick={()=>{
                   activeMode("signup")
                   }}>
-                  <Button  buttonSize='btn--wide' buttonStyle='btn--secondry'>
+                  <Button className="heroBtn" buttonSize='btn--wide' buttonStyle='btn--secondry'>
                     {btnLabel}
                   </Button>
                 </Link>
               </div>
             </div>
-            {/* <div className='colom'>
-              <div className='hero_imgWrapper'>
-                <img className="hero_img"/>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

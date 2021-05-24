@@ -12,7 +12,6 @@ export const FormContainer = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
 `;
 
 export const MutedLink = styled.a`
@@ -26,7 +25,7 @@ export const MutedLink = styled.a`
 
 export const BoldLink = styled.a`
   font-size: 13px;
-  color: rgb(242, 53, 87);
+  color: rgb(40, 78, 103);
   font-weight: 700;
   text-decoration: none;
   margin: 0 4px;

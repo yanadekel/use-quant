@@ -20,12 +20,12 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background-color:(18, 45, 62, 1);
-  background: linear-gradient(
-    58deg,
-    rgba(40, 78, 103, 1) 20%,
-    rgba(18, 45, 62, 1) 100%
-  );
+  background-color:#fff;
+  // background: linear-gradient(
+  //   58deg,
+  //   rgba(40, 78, 103, 1) 20%,
+  //   rgba(18, 45, 62, 1) 100%
+  // );
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   margin:2% 0;
@@ -43,18 +43,18 @@ const TopContainer = styled.div`
 `;
 
 const DownDrop = styled(motion.div)`
-  width: 100%;
-  height: 100px;
+width: 180%;
+height: 480px;
   position: absolute;
   display: flex;
   flex-direction: column;
   border-radius: 50%;
-  transform: rotate(30deg);
-  top: -341px;
-  left: -109px;
+  transform: rotate(20deg);
+  top: -290px;
+  left: -70px;
   background: rgb(77,128,160);
   background: linear-gradient(
-    281deg,
+    200deg,
     rgba(77, 128, 160, 1) 20%,
     rgba(18, 45, 62, 1) 100%
   );
@@ -97,13 +97,13 @@ const DownDropVariants = {
     width: "233%",
     height: "1050px",
     borderRadius: "20%",
-    transform: "rotate(30deg)",
+    transform: "rotate(20deg)",
   },
   collapsed: {
-    width: "130%",
-    height: "550px",
+    width: "115%",
+    height: "480px",
     borderRadius: "50%",
-    transform: "rotate(30deg)",
+    transform: "rotate(20deg)",
   },
 };
 
@@ -115,13 +115,6 @@ const expandingTransition = {
 
 const AddProject = ({updateProjects}) => {
   const [isExpanded, setExpanded] = useState(false);
-
-  // const expandingAnimation = () => {
-  //   setExpanded(true);
-  //   setTimeout(() => {
-  //     setExpanded(false);
-  //   }, expandingTransition.duration * 1000 - 1500);
-  // };
 
   return (<>
     <StyledView>
@@ -136,7 +129,6 @@ const AddProject = ({updateProjects}) => {
 
           <HeaderContainer>
             <HeaderText>Add New Project</HeaderText>
-            <SmallText>Must Add File</SmallText>
           </HeaderContainer>
 
         </TopContainer>

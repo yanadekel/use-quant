@@ -18,80 +18,50 @@ align-items:center;
 
 `
 const StyledContainer = styled.div`
-  width: 50%;
-  min-height: 70%;
+  width: 78%;
+  min-height: 60%;
   display: flex;
   flex-direction: column;
+  aligh-items: center;
   border-radius: 18px;
-  background-color:rgb(77,128,160);
-  // background: linear-gradient(
-  //   30deg,
-  //   rgba(24, 57, 76, 1) 0%,
-  //   rgba(77, 128,160, 1) 35%
-  // );
+  background-color:#fff;
+  opacity: 1;
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
-  margin: auto;
-  // overflow: hidden;
+  margin: 3% auto;
+  overflow: hidden;
 `;
 
 const InnerContainer = styled.div`
-  width: 100%;
+  width:85%;
   display: flex;
   aligh-items: center;
   flex-direction: row;
   justify-content: center;
+  text-aligh:center;
   padding: 0 0px;
   min-height:fit-content;
-  margin: 15px auto;
+  margin: 6px 0px 12px 0px;
   
 `;
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  aligh-items: center;
 `;
 
 const HeaderText = styled.h2`
   font-size: 30px;
   font-weight: 600;
   line-height: 1.24;
-  color: #fff;
+  color: rgb(40, 78, 103);
   z-index: 10;
-  margin: 15px auto;
+  margin: 20px 35%;
 `;
 
-// const SmallText = styled.h3`
-//   color: #fff;
-//   font-weight: 500;
-//   font-size: 15px;
-//   z-index: 10;
-//   margin: auto;
-//   margin-top: 7px;
-// `;
 
-// const OnSubmitButton = styled.button`
-//   align-items:center;
-//   width: 100%;
-//   padding: 11px;
-//   margin:auto;
-//   color: #fff;
-//   font-size: 15px;
-//   font-weight: 600;
-//   border: none;
-//   border-radius:none;
-//   cursor: pointer;
-//   transition: all, 240ms ease-in-out;
-//   background: rgb(40, 78, 103);
-//   background: linear-gradient(
-//     58deg,
-//     rgba(40, 78, 103, 1) 35%,
-//     rgba(18, 45, 62, 1) 100%
-//   );
-//   &:hover {
-//     filter: brightness(1.03);
-//   }
-// `;
 
 const File = ({ appFile }) => {
   return (<>

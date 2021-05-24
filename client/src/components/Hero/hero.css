@@ -5,9 +5,9 @@
 
 .darkHeroSection{
   color: #fff;
-  padding-top: 160px;
+  padding: 107px;
   background : url("https://miro.medium.com/max/10940/0*Z_ijV1Wc2SvCi-OS");
-  height: 100vh;
+  height: 90vh;
   background-repeat : no-repeat;
   background-size : cover; 
 }
@@ -28,17 +28,14 @@
   align-content: stretch;
 }
 
-/* .colom {
-  margin-bottom: 15px;
-  padding-right: 15px;
-  padding-left: 10%;
-  flex: 1;
-  max-width: 50%;
-  flex-basis: 50%;
-} */
+.colom {
+  max-width: 100%;
+  flex-basis: 100%;
+
+}
 
 .hero_contentWrapper {
-  max-width: 540px;
+  max-width: 40%;
   padding-top: 0;
   padding-bottom: 60px;
 }
@@ -54,11 +51,11 @@
 }
 
 .heading {
-  margin-bottom: 24px;
+  margin: 10% 0% 4% 25%;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: #f7f8fa;
+  color: #fff;
   text-align: center;
 }
 
@@ -70,33 +67,16 @@
 
 
 .hero_subtitel {
-  max-width: 440px;
+  max-width: 500px;
   margin-bottom: 35px;
-  margin-left: 40px;
+  margin-left:25%;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
 }
 
 
-/* .hero_imgWrapper {
-  max-width: 555px;
-} */
 
-/* .hero_img {
-  max-width: 95vw;
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 10px;
-  padding-right: 0;
-} */
-
-/* img {
-  border: 0;
-  max-width: 100%;
-  vertical-align: middle;
-  display: inline-block;
-} */
 
 @media screen and (max-width: 991px) {
   .container {

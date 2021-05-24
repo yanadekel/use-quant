@@ -10,7 +10,7 @@ function HomePage({signToAccount}) {
   return (
     <>
     <Hero {...HomeData} signToAccount={signToAccount} />
-    <Hero2 {...HomeData2} signToAccount={signToAccount} />  
+    {/* <Hero2 {...HomeData2} signToAccount={signToAccount} />   */}
     </>
   )
 }

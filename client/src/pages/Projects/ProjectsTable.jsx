@@ -21,12 +21,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  background-color:rgb(77,128,160);
-  // background: linear-gradient(
-  //   30deg,
-  //   rgba(24, 57, 76, 1) 0%,
-  //   rgba(77, 128,160, 1) 35%
-  // );
+  background-color:#fff;
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   margin: auto;
@@ -51,13 +46,13 @@ const HeaderText = styled.h2`
   font-size: 30px;
   font-weight: 600;
   line-height: 1.24;
-  color: #fff;
+  color: rgb(40, 78, 103);
   z-index: 10;
   margin:auto;
 `;
 
 const SmallText = styled.h3`
-  color: #fff;
+  color:rgb(40, 78, 103);
   font-weight: 500;
   font-size: 15px;
   z-index: 10;
@@ -105,7 +100,7 @@ const ProjectsTable = ({ projects, activeProjects, updateFileFromApp}) => {
       <StyledContainer>
         <HeaderContainer>
           <Margin margin="50px" direction="virtical" />
-          <HeaderText>Projects Table</HeaderText>
+          <HeaderText>Projects</HeaderText>
           <SmallText>View All projects</SmallText>
         </HeaderContainer>
         <InnerContainer>

@@ -95,9 +95,9 @@ const CreateForm = ({updateProjects}) => {
           <BoldLink href="#"> Costumer Name</BoldLink>
           <Input type="text" value={costumerName} onChange={(e) => setCostumerName(e.target.value)} placeholder="Costumer Name" />
           <Margin margin="20px" direction="virtical" />
-          <BoldLink href="#"> Uploud File</BoldLink>
+          <BoldLink href="#"> Uploud File<MutedLink href="#">--must add file--</MutedLink></BoldLink>
           <Input type="file" name="file" onChange={onChangeHandler} />
-          <Button buttonStyle='btn--outline2' accept="*.csv" onClick={fileClickHandler}>Upload File</Button>
+          <Button buttonStyle='btn--outline' accept="*.csv" onClick={fileClickHandler}>Upload File</Button>
         </FormContainer>
         <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={formClickHandler}>CREATE PROJECT</OnSubmitButton>
         <MutedLink href="#">GO  TO PROJECTS? <BoldLink href="/projects"> Projects</BoldLink></MutedLink>
