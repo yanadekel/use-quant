@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from '../../components/Table.component/Table';
 import { Margin } from "../../components/margin/Margin";
 import { useHistory } from 'react-router-dom';
+import moment from "moment";
 import axios from 'axios';
 import './TableQuant.css';
 
@@ -16,9 +17,6 @@ const TableQuant = ({ projects, activeProjects, updateFileFromApp }) => {
 
 
   const handleClick = async (fileName) => {
-    console.log("TableQuant.handleClick function");
-    console.log('TableQuant.handleClick fetching file name ');
-    console.log(fileName);
     try {
       const response = await axios.get(`/api/useQuant/fils/file/${fileName}`);
       const data = response.data[0];
@@ -56,7 +54,7 @@ useEffect(() => {
               {project.fileName}
             </button>
           </td>
-          <td>{project.date}</td>
+          <td>{moment(project.date).format("DD.MM.YYYY HH:mm")}</td>
         </tr>
       )
     })
