@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-// const auth = require('../middleware/auth')
-// const adminAuth = require('../middleware/adminAuth');
+const auth = require('../middleware/auth');
+const adminAuth = require('../middleware/adminAuth');
 const projectsController = require('../controllers/projects.controller');
 
 
 
-router.post('/', (req, res) => {
+router.post('/',auth,  (req, res) => {
   projectsController.addProject(req, res);
 })
-  .get('/', (req, res) => {
+  .get('/',auth, (req, res) => {
     projectsController.getAllProjects(req, res);
 
   }).get('/active', (req, res) => {
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     //login to costumer project
   })
 
-  .put('/update/:Id', (req, res) => {
+  .put('/update/:Id',auth, (req, res) => {
     projectsController.updateProject(req, res);
   })
   

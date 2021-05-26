@@ -3,11 +3,12 @@ const validator = require("validator");
 
 
 const ProjectSchema =  mongoose.Schema({
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   required: true,
-  //   ref: 'Matrix',
-  // },
+
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User',
+  },
 
   costumerName: {
     type: String,
@@ -54,3 +55,4 @@ const ProjectSchema =  mongoose.Schema({
 
 const Project = mongoose.model('projects', ProjectSchema);
 module.exports = Project;
+

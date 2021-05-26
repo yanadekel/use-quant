@@ -4,30 +4,30 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
-const userSchema = mongoose.Schema({
-  userType: {
-    type: String,
-    required: true,
-    enum: ['costumer', 'admin'],
-    default: 'costumer',
-},
+const userSchema = new mongoose.Schema({
+
+  // userType: {
+  //   type: String,
+  //   required: true,
+  //   enum: ['costumer', 'admin'],
+  //   default: 'costumer',
+  // },
+
   name: {
     type: String,
-    nested:{
+    nested: {
       firstName: { type: String },
       lastName: { type: String }
     },
-    ltrim: true,
-    rtrim: true,
     lowercase: true,
     required: true,
     minLength: 2,
     validate(value) {
-        if (!validator.isAlphanumeric(value, 'pl-PL')) {
-            throw new Error('Name cannot contain special characters.')
-        }
+      if (!validator.isAlphanumeric(value, 'pl-PL')) {
+        throw new Error('Name cannot contain special characters.')
+      }
     }
-},
+  },
 
   email: {
     type: String,
@@ -69,41 +69,59 @@ const userSchema = mongoose.Schema({
       required: true
     }
   }]
-
-
-
-
+  
+  
+  
+  
 })
+
+//make conection between user and project
+
+userSchema.virtual('projects', {
+  ref: 'Project',
+  localField: '_id',
+  foreignField: 'owner',
+})
+
+
 //find user object
+
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();
 
+  delete userObject.password;
+  delete userObject.tokens;
+
   return userObject;
 }
+
 //add user token
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
-  // console.log(user._id);
-  const token = jwt.sign({ _id: user._id.toString() }, process.env.TOKEN_SECURITY);
+  //process.env.TOKEN_SECURITY
+  const token = jwt.sign({ _id: user._id.toString() }, 'thisismytoken');
   user.tokens = user.tokens.concat({ token });
   await user.save();
-  // console.log(token);
   return token;
 }
 
 
 //validation of user=> email, password
 userSchema.statics.findByCredentials = async (email, password) => {
-  const user = await usermodel.findOne({ email });
+  const user = await User.findOne({ email });
   console.log(user);
+
   if (!user) {
     throw new Error('unable to login');
   }
+
   const isMatch = await bcrypt.compare(password, user.password);
+
   if (!isMatch) {
     throw new Error('unable to login');
   }
+
   return user;
 };
 
@@ -111,18 +129,11 @@ userSchema.statics.findByCredentials = async (email, password) => {
 userSchema.pre('save', async function (next) {
   const user = this;
   if (user.isModified('password')) {
-    user.details.password = await bcrypt.hash(user.password, 8)
+    user.password = await bcrypt.hash(user.password, 8)
   }
   next();
 })
 
-//make conection between user and project
 
-userSchema.virtual('projects', {
-  ref: 'project',
-  localField: '_id',
-  foreignField: 'owner',
-})
-
-const User = mongoose.model('users', userSchema);
+const User = mongoose.model('User', userSchema);
 module.exports = User;

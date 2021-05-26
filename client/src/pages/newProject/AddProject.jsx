@@ -75,14 +75,14 @@ const HeaderText = styled.h2`
   margin:auto;
 `;
 
-const SmallText = styled.h3`
-  color: #fff;
-  font-weight: 500;
-  font-size: 15px;
-  z-index: 10;
-  margin: auto;
-  margin-top: 7px;
-`;
+// const SmallText = styled.h3`
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 15px;
+//   z-index: 10;
+//   margin: auto;
+//   margin-top: 7px;
+// `;
 
 const InnerContainer = styled.div`
   width: 100%;

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import HeatMatrix from "react-heatmap-grid";
+import React, { useState} from "react";
 import HeatMap from "../Heatmap/HeatMap.jsx";
 
 

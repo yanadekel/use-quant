@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import {
   StyledContainer,
@@ -11,19 +11,41 @@ import {
 import "./newPro.css"
 import { Margin } from "../../components/margin/Margin";
 import { Button } from '../../components/btn/Button';
+import { useHistory } from "react-router-dom";
 
 
-const CreateForm = ({updateProjects}) => {
+const CreateForm = ({ updateProjects }) => {
   const base = "/api/useQuant";
+  const [userToken, setUserToken] = useState(null);
   const [projectName, setProjectName] = useState('');
   const [costumerName, setCostumerName] = useState('');
   const [fileName, setFileName] = useState('');
   const [selectedFile, setSelectedFile] = useState('');
-  
+  const [errMsg, setErrMsg] = useState(null);
+
+  const history = useHistory();
+
+  useEffect(() => {
+    try {
+      const token = sessionStorage.getItem("token");
+      let parsedToken;
+      if (token) {
+        parsedToken = JSON.parse(token);
+        setUserToken(parsedToken);
+      }
+      else {
+        history.push("/signToAccount");
+      }
+
+      // getUser(parsedToken);
+    } catch (error) {
+      console.log("error:", error);
+      setErrMsg("Error occured please try again.");
+    }
+  }, []);
 
 
   const fetchPostData = async (req, res) => {
-
 
     try {
       const response = await axios.post(`${base}/projects`, {
@@ -31,6 +53,8 @@ const CreateForm = ({updateProjects}) => {
         costumerName,
         fileName,
 
+      }, {
+        headers: { Authorization: `Bearer ${userToken}` }
       });
       console.log(response);
       prompt("Project Created");
@@ -51,14 +75,15 @@ const CreateForm = ({updateProjects}) => {
 
   const onChangeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
+    console.log("CreateForm.onChangeHangler - selectedFile")
     console.log(selectedFile)
   }
 
 
   const formClickHandler = async () => {
     await fetchPostData();
-
     reset();
+    history.push("/projects");
   }
 
   const fileClickHandler = () => {
@@ -68,8 +93,9 @@ const CreateForm = ({updateProjects}) => {
 
     }).then(res => {
       setFileName(selectedFile.name);
-      console.log(res.data.id, fileName);
-      
+      console.log("CreateForm.fileClickHandler");
+      console.log(res.data, fileName);
+
     })
 
   }

@@ -124,13 +124,11 @@ function Account(props) {
   };
   
   const appUpdate = async () => {
-    console.log("Account.appUpdate: active = " + active + "; props.appActive = " + props.appActive)
+   
     if (props.appActive === "signup") {
-      console.log("props.appActive" + props.appActive)
       await setActive("signup");
     }
     if (props.appActive === "login") {
-      console.log("props.appActive" + props.appActive)
       await setActive("login");
     }
   }
@@ -152,7 +150,6 @@ function Account(props) {
 
 
   useEffect(() => {
-    console.log("Account.useEffect => not in use")
     appUpdate();
   }, [active]);
 

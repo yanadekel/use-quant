@@ -12,11 +12,13 @@ import './TableQuant.css';
 
 
 const TableQuant = ({ projects, activeProjects, updateFileFromApp }) => {
-  console.log("TableQuant Component");
+
+  const [projectsTable, setProjectsTable] = useState([]);
   const history = useHistory();
 
-
+  
   const handleClick = async (fileName) => {
+    console.log("TableQuant.handleClick function");
     try {
       const response = await axios.get(`/api/useQuant/fils/file/${fileName}`);
       const data = response.data[0];
@@ -31,10 +33,15 @@ const TableQuant = ({ projects, activeProjects, updateFileFromApp }) => {
   }
 
 useEffect(() => {
- 
-}, [])
+
+ if(projects){
+  setProjectsTable(projects)
+ }
+}, [projectsTable])
+
+
   const renderHeader = () => {
-    console.log("TableQuant.renderHeader function");
+
     let headerElement = ['Project-Name', 'Costumer', 'File', 'Date'];
 
     return headerElement.map((key, index) => {
@@ -43,7 +50,7 @@ useEffect(() => {
   }
 
   const renderBody = () => {
-    console.log("TableQuant.renderBody function");
+
     return projects.map((project, index) => {
       return (
         <tr key={index}>

@@ -40,8 +40,8 @@ const DataGrid = ({
               {displayYLabels && y}
             </div>
           </FixedBox>
-          {console.log('DataGrid return xLabels.map data')}
-          {console.log('DataGrid return xLabels.map')}
+          {/* {console.log('DataGrid return xLabels.map data')}
+          {console.log('DataGrid return xLabels.map')} */}
           {xLabels.map((x, xi) => {
             const value = data[yi][xi];
             const style = Object.assign(
