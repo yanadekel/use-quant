@@ -102,10 +102,10 @@ const App = () => {
       if (token) {
         parsedToken = JSON.parse(token);
         setUserToken(parsedToken);
+        fetchProjects();
       } else {
         history.push("/");
       }
-      fetchProjects();
 
     } catch (error) {
       console.log("error:", error);
