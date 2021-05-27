@@ -30,7 +30,9 @@ export function SignupForm(props) {
       token = response.data?.token;
       console.log("token:", token);
       sessionStorage.setItem("token", JSON.stringify(token));
+      console.log("Post Set Items to Session Storage");
       history.push({ pathname: `/addProject/` });
+      console.log("Post history.push");
 
     } catch (error) {
       if (error.response.status === 406) {
