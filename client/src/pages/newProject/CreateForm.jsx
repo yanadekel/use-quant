@@ -126,7 +126,7 @@ const CreateForm = ({ updateProjects }) => {
           <Button buttonStyle='btn--outline' accept="*.csv" onClick={fileClickHandler}>Upload File</Button>
         </FormContainer>
         <OnSubmitButton id="costumeBtnStyle" type="submit" onClick={formClickHandler}>CREATE PROJECT</OnSubmitButton>
-        <MutedLink href="#">GO  TO PROJECTS? <BoldLink href="/projects"> Projects</BoldLink></MutedLink>
+        {/* <MutedLink href="#">GO  TO PROJECTS? <BoldLink href="/projects"> Projects</BoldLink></MutedLink> */}
       </StyledContainer>
     </>
   )
